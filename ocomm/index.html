@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/style.css">
+    <title>韩力超 - 基于LED的可见光通信系统的基本仿真</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" style="margin-top:20px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">韩力超的项目展示</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="main-nav">
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">项目<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../finger-car/index.html">指纹遥控器</a></li>
+                                <li><a href="../gesture/index.html">手势识别系统</a></li>
+                                <li><a href="../xillinx/index.html">高性能FPGA</a></li>
+                                <li><a href="../tiva/index.html">高性能嵌入式</a></li>
+                                <li class="active"><a href="javascript:;">可见光通信系统</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">科研<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../snrecommend/index.html">SN推荐系统</a></li>
+                                <li><a href="../linkprediction/index.html">链路预测评价</a></li>
+                                <li><a href="../socomputing/index.html">社会计算应用</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-xs-3">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul class="nav bs-docs-sidenav">
+                        <li><a href="#研究背景">研究背景</a></li>
+                        <li><a href="#引言">引言</a></li>
+                        <li><a href="#led照明设计">LED照明设计</a><ul class="nav">
+                        <li><a href="#led的基本特性">LED的基本特性</a></li>
+                        <li><a href="#led的照明光度">LED的照明光度</a></li>
+                        <li><a href="#白光led设计">白光LED设计</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#led的接收功率">LED的接收功率</a><ul class="nav">
+                        <li><a href="#直射光功率">直射光功率</a></li>
+                        <li><a href="#反射光的接收功率">反射光的接收功率</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#码间干扰">码间干扰</a><ul class="nav">
+                        <li><a href="#无线光通道">无线光通道</a></li>
+                        <li><a href="#冲激响应">冲激响应</a></li>
+                        <li><a href="#码间干扰下的snr性能">码间干扰下的SNR性能</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#结论">结论</a></li>
+                        <li><a href="#代码块">代码块</a></li>
+                        <li><a href="#反馈与建议">反馈与建议</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-9">
+                <div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-32" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-11573" class="wmd-preview-section preview-content">
+
+<h1 id="基于led的可见光通信系统的基本仿真">基于LED的可见光通信系统的基本仿真</h1>
+
+<p>Simulatiom on Fundamental Analysis for Visible-Light Communication System using LED Lights</p>
+
+<hr>
+
+<div><div class="toc"><div class="toc">
+<ul class="nav">
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="wmd-preview-section-7501" class="wmd-preview-section preview-content">
+
+<h2 id="研究背景">研究背景</h2>
+
+<blockquote>
+  <p>白光LED具有亮度高、稳定性好、能耗低、使用期限长等优点，故LED被视为下一代照明灯光的材料。我们实验室已经提出了一种利用白光LED组成的室内可见光通信系统。在已提出的系统中，LED不仅用于房间照明，还用于组成无线光通信系统。总体上看，我们在房间里安装了多个LED，所以必须考虑它们之间的光程差。在本篇论文中，我们考虑了干涉和反射的影响，在数值分析的基础之上，我们证明了该系统可以作为下一代室内通信系统。</p>
+</blockquote></div><div id="wmd-preview-section-7804" class="wmd-preview-section preview-content">
+
+<h2 id="引言">引言</h2>
+
+<blockquote>
+  <p>LED便具有照明和通信的双重功能，并且有许多有趣的应用，其机理在于LED的快速开关变换和在自由空间中的可见光调制。我们提出的系统具有以下的优点：</p>
+  
+  <ul><li>由于使用高功率分布式照明设备，光信息在整个房间的传播过程中阴影很少；</li>
+  <li>白光LED照明设备方便安装，且很美观。</li>
+  </ul>
+  
+  </blockquote></div><div id="wmd-preview-section-10025" class="wmd-preview-section preview-content">
+
+<h2 id="led照明设计">LED照明设计</h2></div><div id="wmd-preview-section-7867" class="wmd-preview-section preview-content">
+
+<h3 id="led的基本特性">LED的基本特性</h3>
+
+<blockquote>
+  <p>LED有两个基本的属性：光强和传输光功率。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-10010" class="wmd-preview-section preview-content">
+
+<h3 id="led的照明光度">LED的照明光度</h3>
+
+<blockquote>
+  <p>总体而言，照度是由ISO进行的标准化，根据这套标准，办公室工作需要的照度为300～1500 lx。 <br>
+  <img longdesc="./1446466474448.png" alt="Alt text" title="" type="image/png" src="./images/1446466474448.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote></div><div id="wmd-preview-section-9875" class="wmd-preview-section preview-content">
+
+<h3 id="白光led设计">白光LED设计</h3>
+
+<blockquote>
+  <p>接下来我们将利用数值分析的方法来讨论系统的可能应用场景。假定某房间用于场景分析，尺寸为5m×5m×3m，灯具按照下图的方式安装。 <br>
+  作为光路传输的LED灯安装在距离地面高度为2.5m处，桌面的高度为0.85m，用户终端放置在桌面上。共4套LED照明设备，每个LED灯由3600个（60×60）LED单元构成。LED单元间距为1cm，相应地，LED芯片半功率处的半角为70度，LED芯片的中心光强为0.73cd，LED的传输光功率为20mW。</p>
+</blockquote>
+
+<p><strong>仿真结果</strong></p>
+
+<blockquote>
+  <p><img longdesc="./1446466640416.png" alt="Alt text" title="" type="image/png" src="./images/1446466640416.png" alt="Alt text" title="" type="image/png" > <br>
+  照明度分布</p>
+</blockquote></div><div id="wmd-preview-section-8293" class="wmd-preview-section preview-content">
+
+<h2 id="led的接收功率">LED的接收功率</h2>
+
+</div><div id="wmd-preview-section-10251" class="wmd-preview-section preview-content">
+
+<h3 id="直射光功率">直射光功率</h3>
+
+<blockquote>
+  <p><img longdesc="./1446466706980.png" alt="Alt text" title="" type="image/png" src="./images/1446466706980.png" alt="Alt text" title="" type="image/png" > <br>
+  接收功率分布</p>
+  
+  <p>A为PD探测器的物理区域，Dd为发送端和接收端之间的距离，ψ是入射角，φ是辐照度角,Ts(ψ)是光滤波器的增益，g(ψ)是集光器的增益。ΨC表示在接收器中视角的宽度。 <br>
+  <img longdesc="./1446466749808.png" alt="Alt text" title="" type="image/png" src="./images/1446466749808.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote>
+
+<p>接收功率分布如下</p>
+
+<blockquote>
+  <p><img longdesc="./1446467177478.png" alt="Alt text" title="" type="image/png" src="./images/1446467177478.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote></div><div id="wmd-preview-section-10456" class="wmd-preview-section preview-content">
+
+<h3 id="反射光的接收功率">反射光的接收功率</h3>
+
+<p>接收功率由直射路径的直流信道增益Hd(0)和反射路径的直流增益Href(0) <br>
+<img longdesc="./1446466840318.png" alt="Alt text" title="" type="image/png" src="./images/1446466840318.png" alt="Alt text" title="" type="image/png" > <br>
+第一次反射的直流增益为 <br>
+<img longdesc="./1446466874998.png" alt="Alt text" title="" type="image/png" src="./images/1446466874998.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>反射接收功率分布仿真如下 <br>
+<img longdesc="./1446467338594.png" alt="Alt text" title="" type="image/png" src="./images/1446467338594.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-10491" class="wmd-preview-section preview-content">
+
+<h2 id="码间干扰">码间干扰</h2>
+
+</div><div id="wmd-preview-section-10672" class="wmd-preview-section preview-content">
+
+<h3 id="无线光通道">无线光通道</h3>
+
+<p>无线光通道模型可以表示为： <br>
+<img longdesc="./1446466919579.png" alt="Alt text" title="" type="image/png" src="./images/1446466919579.png" alt="Alt text" title="" type="image/png" > <br>
+ 考虑OOK调制方案，在OOK中，有光传输时比特编码为1，无光传输时比特编码为0，我们将假定一个矩形脉冲波形的持续时间为一个比特周期。误比特率BER： <br>
+ <img longdesc="./1446466957195.png" alt="Alt text" title="" type="image/png" src="./images/1446466957195.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>其中 <br>
+  <img longdesc="./1446466989984.png" alt="Alt text" title="" type="image/png" src="./images/1446466989984.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote>
+
+</div><div id="wmd-preview-section-10901" class="wmd-preview-section preview-content">
+
+<h3 id="冲激响应">冲激响应</h3>
+
+<p>传输时延 <br>
+<img longdesc="./1446468434903.png" alt="Alt text" title="" type="image/png" src="./images/1446468434903.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-11111" class="wmd-preview-section preview-content">
+
+<h3 id="码间干扰下的snr性能">码间干扰下的SNR性能</h3>
+
+<blockquote>
+  <p>在这里,k是玻耳兹曼常量，T_k是绝对温度,G是开环电压增益,η是单位面积光探测器的固定电容,Γ是场效应晶体管通道噪声系数,g_m是场效应晶体管的跨导，I3 = 0.0868。在我们的数值分析的例子中，我们选择以下参数值T=295K,γ=0.54A/W,G=10, g_m=30mS, Γ=1.5,η=112pF/cm2, B=100Mb/s,我们假设的背景电流来自直合光</p>
+</blockquote>
+
+<p>信噪比的分布如图</p>
+
+<blockquote>
+  <p>直射光有码间干扰的SNR分布 <br>
+  <img longdesc="./1446468499273.png" alt="Alt text" title="" type="image/png" src="./images/1446468499273.png" alt="Alt text" title="" type="image/png" > <br>
+  反射光有码间干扰的SNR分布 <br>
+  <img longdesc="./1446468579185.png" alt="Alt text" title="" type="image/png" src="./images/1446468579185.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote></div><div id="wmd-preview-section-11321" class="wmd-preview-section preview-content">
+
+<h2 id="结论">结论</h2>
+
+<blockquote>
+  <p>在可见光通信系统中，同时满足光学照明和光学传输的要求是很重要的。我们讨论了这些要求，并展示了设计的例子。同时我们知道这个系统可以同时实现照明和通信。接下来,我们讨论了反射和码间干扰的影响。码间干扰取决于数据率和接收机的视野范围。 <br>
+  许多光源可以替代LED。可见光通信系统很容易使高数据率成为可能。因此,可见光通信系统有希望成为下一代的室内通信系统。进一步的研究将增加LED照明通信的可行性。</p>
+</blockquote></div><div id="wmd-preview-section-8458" class="wmd-preview-section preview-content">
+
+<h2 id="代码块">代码块</h2></div><div id="wmd-preview-section-7118" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"><span class="hljs-prompt">... </span>访问链接<br></code></pre></div><div id="wmd-preview-section-7385" class="wmd-preview-section preview-content">
+
+<h2 id="反馈与建议">反馈与建议</h2>
+
+<ul><li>微博：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">hanlichao1993</a></li>
+<li>邮箱：<a href="mailto:hanlichao@bupt.edu.cn" target="_blank">hanlichao@bupt.edu.cn</a></li>
+</ul>
+
+<hr>
+
+<p>感谢阅读</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../vendor/docs.min.js"></script>
+    <script type="text/javascript" src="../vendor/index.js"></script>
+</body>
+</html>

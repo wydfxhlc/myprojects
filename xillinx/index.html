@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/style.css">
+    <title>韩力超 - 基于赛灵思Zynq系列开发板的高集成FPGA开发</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" style="margin-top:20px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">韩力超的项目展示</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="main-nav">
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">项目<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../finger-car/index.html">指纹遥控器</a></li>
+                                <li><a href="../gesture/index.html">手势识别系统</a></li>
+                                <li class="active:;"><a href="javascript:;">高性能FPGA</a></li>
+                                <li><a href="../tiva/index.html">高性能嵌入式</a></li>
+                                <li><a href="../ocomm/index.html">可见光通信系统</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">科研<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../snrecommend/index.html">SN推荐系统</a></li>
+                                <li><a href="../linkprediction/index.html">链路预测评价</a></li>
+                                <li><a href="../socomputing/index.html">社会计算应用</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-xs-3">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul class="nav bs-docs-sidenav">
+                        <li><a href="#development-board">Development Board</a></li>
+                        <li><a href="#system-design">System Design</a><ul class="nav">
+                        <li><a href="#part-1">Part 1</a><ul class="nav">
+                        <li><a href="#zynq">Zynq</a></li>
+                        <li><a href="#usb-uart-bridge-serial-port">USB UART Bridge (Serial Port)</a></li>
+                        <li><a href="#basic-io">Basic I/O</a></li>
+                        <li><a href="#pmod-connectors">Pmod Connectors</a></li>
+                        <li><a href="#combination">Combination</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#part-2">Part 2</a><ul class="nav">
+                        <li><a href="#pmod">Pmod</a></li>
+                        <li><a href="#device-usage">Device Usage</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#part-3">Part 3</a><ul class="nav">
+                        <li><a href="#additions">Additions</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#part-4">Part 4</a><ul class="nav">
+                        <li><a href="#axi-timer">AXI-TIMER</a></li>
+                        <li><a href="#pulse-width-modulation">Pulse Width Modulation</a></li>
+                        <li><a href="#vivado-logical-design">Vivado Logical Design</a></li>
+                        <li><a href="#vivado-high-level-synthesis">Vivado High-Level Synthesis</a></li>
+                        </ul>
+                        </li>
+                        </ul>
+                        </li>
+                        <li><a href="#result">Result</a></li>
+                        <li><a href="#code">Code</a></li>
+                        <li><a href="#feedback-and-suggestions">Feedback and Suggestions</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-9">
+                <div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-10716" class="wmd-preview-section preview-content">
+
+<h1 id="high-integration-fpga-development-based-on-xilinx-zynq-series-boards">High-integration FPGA development based on Xilinx Zynq series boards</h1>
+
+<p>基于赛灵思Zynq系列开发板的高集成FPGA开发</p>
+
+<p>High-integration FPGA development based on Xilinx Zynq series boards</p>
+
+<hr>
+
+<div><div class="toc"><div class="toc">
+
+</div>
+</div>
+</div>
+
+<p><strong>Exhibition at Experiment Lab of BUPT</strong> <br>
+<img longdesc="./1446473260277.png" alt="Alt text" title="" type="image/png" src="./images/1446473260277.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p><img longdesc="./1446473059452.png" alt="Alt text" title="" type="image/png" src="./images/1446473059452.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-4453" class="wmd-preview-section preview-content">
+
+<h2 id="development-board">Development Board</h2>
+
+<p>Zynq Board <br>
+<img longdesc="./1446473466630.png" alt="Alt text" title="" type="image/png" src="./images/1446473466630.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-9443" class="wmd-preview-section preview-content">
+
+<h2 id="system-design">System Design</h2>
+
+<p>Physical Design <br>
+<img longdesc="./1446473431744.png" alt="Alt text" title="" type="image/png" src="./images/1446473431744.png" alt="Alt text" title="" type="image/png" > <br>
+Logical Relationship <br>
+<img longdesc="./1446475271126.png" alt="Alt text" title="" type="image/png" src="./images/1446475271126.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-6531" class="wmd-preview-section preview-content">
+
+<h3 id="part-1">Part 1</h3></div><div id="wmd-preview-section-4696" class="wmd-preview-section preview-content">
+
+<h4 id="zynq">Zynq</h4>
+
+<p><img longdesc="./1446473532302.png" alt="Alt text" title="" type="image/png" src="./images/1446473532302.png" alt="Alt text" title="" type="image/png" > <br>
+<img longdesc="./1446473570951.png" alt="Alt text" title="" type="image/png" src="./images/1446473570951.png" alt="Alt text" title="" type="image/png" > <br>
+Voltage regulator circuits from Analog Devices create the required 3.3V, 1.8V, 1.5V, and 1.0V supplies from the main power input. <br>
+<img longdesc="./1446473611987.png" alt="Alt text" title="" type="image/png" src="./images/1446473611987.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <ul><li>650Mhz dual-core Cortex-A9 processor</li>
+  <li>High-bandwidth peripheral controllers: 1G Ethernet, USB 2.0, SDIO                   </li>
+  <li>Low-bandwidth peripheral controller: SPI, UART, CAN, I 2C</li>
+  <li>Reprogrammable logic equivalent to Artix-7 FPGA</li>
+  </ul>
+</blockquote>
+
+<ul><li>Internal clock speeds exceeding 450MHz</li>
+<li>On-chip analog-to-digital converter (XADC)</li>
+</ul>
+
+<blockquote>
+  <p>*GPIO: 6 pushbuttons, 4 slide switches, 5 LEDs</p>
+  
+  <ul><li>Six Pmod connectors (1 processor-dedicated, 1 dual analog/digital, 3 high-          speed differential, 1 logic-dedicated)</li>
+  </ul>
+</blockquote>
+
+</div><div id="wmd-preview-section-4847" class="wmd-preview-section preview-content">
+
+<h4 id="usb-uart-bridge-serial-port">USB UART Bridge (Serial Port)</h4>
+
+<ul><li>The ZYBO includes an FTDI FT2232HQ USB-UART bridge (attached to connector J11) that lets you use PC applications to communicate with the board using standard Windows COM port commands</li>
+<li>I/O commands can be used from the PC directed to the COM port to produce serial data traffic on the Zynq pins.</li>
+<li>Using the following default protocol parameters: 115200 baud rate, 1 stop bit, no parity, 8-bit character length.</li>
+</ul>
+
+<p><img longdesc="./1446473761113.png" alt="Alt text" title="" type="image/png" src="./images/1446473761113.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-4969" class="wmd-preview-section preview-content">
+
+<h4 id="basic-io">Basic I/O</h4>
+
+<ul><li>The ZYBO board includes four slide switches, four push buttons, and four individual LEDs connected to the Zynq PL. <br>
+*The LED and two pushbuttons attached directly to the PS are accessed using the Zynq GPIO controller.</li>
+</ul>
+
+<p><img longdesc="./1446473915402.png" alt="Alt text" title="" type="image/png" src="./images/1446473915402.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-5402" class="wmd-preview-section preview-content">
+
+<h4 id="pmod-connectors">Pmod Connectors</h4>
+
+<ul><li>Pmod connectors are 2x6 female connectors that mate with standard 2x6 pin headers.</li>
+<li>Each 12-pin Pmod connector provides two 3.3V VCC signals (pins 6 and 12), two Ground signals (pins 5 and 11),and eight logic signals.</li>
+<li><p>The VCC and Ground pins can deliver up to 1A of current. </p>
+
+<p><img longdesc="./1446473976341.png" alt="Alt text" title="" type="image/png" src="./images/1446473976341.png" alt="Alt text" title="" type="image/png" ></p></li>
+</ul>
+
+<blockquote>
+  <ul><li>The ZYBO has six Pmod connectors.</li>
+  <li>Each Pmod connector falls into one of four categories: <br>
+  <ul><li>standard,</li>
+  <li>MIO connected,</li>
+  <li>XADC</li>
+  <li>high-speed Table 9 specifies </li>
+  </ul> <br>
+  </li></ul></blockquote></div><div id="wmd-preview-section-5533" class="wmd-preview-section preview-content">
+
+<h4 id="combination">Combination</h4>
+
+<p><img longdesc="./1446474143354.png" alt="Alt text" title="" type="image/png" src="./images/1446474143354.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-5604" class="wmd-preview-section preview-content">
+
+<h3 id="part-2">Part 2</h3>
+
+</div><div id="wmd-preview-section-6040" class="wmd-preview-section preview-content">
+
+<h4 id="pmod">Pmod</h4>
+
+<ul><li>Schematic diagram <br>
+<img longdesc="./1446474312589.png" alt="Alt text" title="" type="image/png" src="./images/1446474312589.png" alt="Alt text" title="" type="image/png" > <br>
+<img longdesc="./1446474242270.png" alt="Alt text" title="" type="image/png" src="./images/1446474242270.png" alt="Alt text" title="" type="image/png" > <br>
+<img longdesc="./1446474269823.png" alt="Alt text" title="" type="image/png" src="./images/1446474269823.png" alt="Alt text" title="" type="image/png" ></li>
+<li>Pins <br>
+<img longdesc="./1446474336705.png" alt="Alt text" title="" type="image/png" src="./images/1446474336705.png" alt="Alt text" title="" type="image/png" ></li>
+</ul>
+
+</div><div id="wmd-preview-section-6505" class="wmd-preview-section preview-content">
+
+<h4 id="device-usage">Device Usage</h4>
+
+<blockquote>
+  <p>To read a button’s state, the column pin in which the button resides must be pulled low. This enables all of the buttons in that column.</p>
+  
+  <p>When a button in that column is pushed, the corresponding row pin will read logic low.</p>
+  
+  <p>All of the buttons can be read by walking a logic 0 through each column pin (keeping the other pins at logic high) and reading the row pins. This will read the state of each button.</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-6591" class="wmd-preview-section preview-content">
+
+<h3 id="part-3">Part 3</h3>
+
+</div><div id="wmd-preview-section-6754" class="wmd-preview-section preview-content">
+
+<h4 id="additions">Additions</h4>
+
+<p>Using is very convenient , for we have used L298N. <br>
+They  share the same function and usage.  <br>
+<img longdesc="./1446474581492.png" alt="Alt text" title="" type="image/png" src="./images/1446474581492.png" alt="Alt text" title="" type="image/png" > <br>
+<img longdesc="./1446474593760.png" alt="Alt text" title="" type="image/png" src="./images/1446474593760.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-6888" class="wmd-preview-section preview-content">
+
+<h3 id="part-4">Part 4</h3>
+
+</div><div id="wmd-preview-section-7089" class="wmd-preview-section preview-content">
+
+<h4 id="axi-timer">AXI-TIMER</h4>
+
+<p>First attempt： <br>
+Using the built-in IP core of Vivado——AXI Timer</p>
+
+<p><img longdesc="./1446474644387.png" alt="Alt text" title="" type="image/png" src="./images/1446474644387.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-7993" class="wmd-preview-section preview-content">
+
+<h4 id="pulse-width-modulation">Pulse Width Modulation</h4>
+
+<p>The block diagram of AXI Timer, also known as AXI Timer/Counter.</p>
+
+<blockquote>
+  <p><strong>Timer  Modes</strong> <br>
+  Four modes can be used with the two Timer/Counter modules: <br>
+   • Generate Mode <br>
+  • Capture Mode <br>
+  • Pulse Width Modulation Mode <br>
+  • Cascade Mode <br>
+  <strong>Pulse  Width  Modulation  Mode</strong> <br>
+  In Pulse Width Modulation (PWM) mode, two timer/counters are used as a pair to produce an output signal (PWM0) with a specified frequency and duty factor. Timer 0 sets the period and Timer 1 sets the high time for the PWM0 output. <br>
+  <strong>Register Overview</strong> <br>
+  <img longdesc="./1446474916988.png" alt="Alt text" title="" type="image/png" src="./images/1446474916988.png" alt="Alt text" title="" type="image/png" ></p>
+  
+  <p><img longdesc="./1446474941792.png" alt="Alt text" title="" type="image/png" src="./images/1446474941792.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote>
+
+</div><div id="wmd-preview-section-8346" class="wmd-preview-section preview-content">
+
+<h4 id="vivado-logical-design">Vivado Logical Design</h4>
+
+<p><img longdesc="./1446475020769.png" alt="Alt text" title="" type="image/png" src="./images/1446475020769.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-9984" class="wmd-preview-section preview-content">
+
+<h4 id="vivado-high-level-synthesis">Vivado High-Level Synthesis</h4>
+
+<p>Abstraction of algorithmic description, data type specification (integer, fixed-point or floating-point) and interfaces (FIFO, AXI4, AXI4-Lite, AXI4-Stream) <br>
+Need three files to complish it.</p></div><div id="wmd-preview-section-8835" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs">PWM.c<br>PWM.h<br>PWM_TEST.c<br></code></pre>
+
+</div><div id="wmd-preview-section-10036" class="wmd-preview-section preview-content">
+
+<h2 id="result">Result</h2>
+
+<p><img longdesc="./1446475379164.png" alt="Alt text" title="" type="image/png" src="./images/1446475379164.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>And video available on <a href="http://undefined" target="_blank">Youtube</a></p></div><div id="wmd-preview-section-10087" class="wmd-preview-section preview-content">
+
+<h2 id="code">Code</h2></div><div id="wmd-preview-section-10163" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs">Website<br></code></pre>
+
+<hr></div><div id="wmd-preview-section-10689" class="wmd-preview-section preview-content">
+
+<h2 id="feedback-and-suggestions">Feedback and Suggestions</h2>
+
+<ul><li>Sina Microblog：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">@hanlichao1993</a></li>
+<li>E-mail：<a href="mailto:hanlicao@bupt.edu.cn" target="_blank">hanlicao@bupt.edu.cn</a></li>
+</ul>
+
+<hr>
+
+<p>Thanks for reading.</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../vendor/docs.min.js"></script>
+    <script type="text/javascript" src="../vendor/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/style.css">
+    <title>韩力超 - 社交媒体的基于协同过滤的推荐系统</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" style="margin-top:20px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">韩力超的项目展示</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="main-nav">
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">项目<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../finger-car/index.html">指纹遥控器</a></li>
+                                <li><a href="../gesture/index.html">手势识别系统</a></li>
+                                <li><a href="../xillinx/index.html">高性能FPGA</a></li>
+                                <li><a href="../tiva/index.html">高性能嵌入式</a></li>
+                                <li><a href="../ocomm/index.html">可见光通信系统</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">科研<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="javascript:;">SN推荐系统</a></li>
+                                <li><a href="../linkprediction/index.html">链路预测评价</a></li>
+                                <li><a href="../socomputing/index.html">社会计算应用</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-xs-1">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul class="nav bs-docs-sidenav">
+                        <!-- menu -->
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-10">
+                <div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-32" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-322" class="wmd-preview-section preview-content">
+
+<h1 id="社交媒体的基于协同过滤的推荐系统">社交媒体的基于协同过滤的推荐系统</h1>
+
+<p>A novel Collaborative Filtering for Recommendation System on Social Media</p>
+
+</div><div id="wmd-preview-section-351" class="wmd-preview-section preview-content">
+
+<h2 id="推荐系统">推荐系统</h2>
+
+<blockquote>
+  <p>如今，推荐系统已经在多方面得到应用，例如淘宝、当当、亚马逊等网站的商品推荐。而个性化推荐系统则是通过发掘用户的兴趣爱好，做出针对性的推荐。个性化推荐的方法较多，最常用的是协同过滤方法，而本次实验主要讲的也是基于协同过滤的个性化推荐。</p>
+</blockquote></div><div id="wmd-preview-section-534" class="wmd-preview-section preview-content">
+
+<h2 id="协同过滤">协同过滤</h2>
+
+<blockquote>
+  <p>协同过滤（Collaborative Filtering）是现今推荐系统中应thumb 推荐系统之协同过滤概述用最为成熟的一个推荐算法系类，它利用兴趣相投、拥有共同经验之群体的喜好来推荐使用者感兴趣的资讯，个人透过合作的机制给予资讯相当程度的回应（如评分）并记录下来以达到过滤的目的进而帮助别人筛选资讯。</p>
+  
+  <p>协同过滤的基本假设是如果用户x和y对n个项目的评价或行为是相似的，那么他们对其他项目所持有的观点也是相似的，即行为相似的用户兴趣也可能相似。</p>
+  
+  <p>一个协同过滤算法的基本方法是对大批用户进行搜索，从中找出兴趣相似的用户群。算法会对这些人的所偏爱的内容进行考察，然后构造出推荐列表，推荐给该群体的用户。</p>
+</blockquote></div><div id="wmd-preview-section-2041" class="wmd-preview-section preview-content">
+
+<h2 id="python语言">Python语言</h2>
+
+<blockquote>
+  <p>Python是一种解释型、面向对象、动态数据类型的高级程序设计语言，具有跨平台、简单实用、扩展性强等特性，数据结构也非常灵活。</p>
+  
+  <p>Python俗称胶水语言，其语法简洁，类库很多，适合快速开发程序。适合做爬虫抓取数据和社交网络分析。</p>
+  
+  <p>Python有很多版本，这次用的版本是python3.2。</p>
+</blockquote></div><div id="wmd-preview-section-586" class="wmd-preview-section preview-content">
+
+<h2 id="传统相似度测量方法">传统相似度测量方法</h2>
+
+</div><div id="wmd-preview-section-643" class="wmd-preview-section preview-content">
+
+<h3 id="寻找有相似兴趣的用户">寻找有相似兴趣的用户</h3>
+
+<p>寻找有相似兴趣的用户方式是比较各用户的评价数据，计算用户间的相似度。主要方法有两种即欧几里得距离和皮尔逊相关度。</p>
+
+</div><div id="wmd-preview-section-724" class="wmd-preview-section preview-content">
+
+<h4 id="欧几里得距离">欧几里得距离</h4>
+
+<p>使用欧几里得距离计算用户的相似度时，将用户评价的物品作为坐标轴，用户填充到坐标体系中。以二维为例 <br>
+ <img longdesc="./1446446275606.png" alt="Alt text" title="" type="image/png" src="./images/1446446275606.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>Snakes和Dupree为电影，Toby，Lasclle等人对应的点根据其评分情况被画在相应的位置。这样两者在偏好空间中的距离越近，他们的兴趣就越相似。而此模型可以推广至多维情况。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-842" class="wmd-preview-section preview-content">
+
+<h4 id="pearson相关度评价">Pearson相关度评价</h4>
+
+<p>Pearson相关系数是根据两组数据与某一直线的拟合程度来衡量的。 <br>
+<img longdesc="./1446446337917.png" alt="Alt text" title="" type="image/png" src="./images/1446446337917.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>此坐标系以用户为坐标轴，用户所评分的电影显示在对应位置。本方法可修正结果，增强准确性。例如TOM, Lily对电影A，B，C的评分为(2, 4.1, 4), (3, 5, 5 )，则用pearson方法得到两者相似度仍然较高，而欧几里得距离法得到的相似度则偏低。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-2871" class="wmd-preview-section preview-content">
+
+<h4 id="余弦距离相似性">余弦距离相似性</h4>
+
+<p>鉴于两个向量的属性， A 和B的余弦相似性θ用一个点积形式来表示其大小，如下所示： <br>
+<img longdesc="./1446446409822.png" alt="Alt text" title="" type="image/png" src="./images/1446446409822.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>产生的相似性范围从-1到1：-1意味着两个向量指向的方向正好截然相反，1表示它们的指向是完全相同的，0通常表示它们之间是独立的，而在这之间的值则表示中度的相似性或相异性。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-3852" class="wmd-preview-section preview-content">
+
+<h2 id="本系统创新点来源">本系统创新点来源</h2>
+
+<ul><li>根据生活经验，人们乐于接受认识的人推荐的东西</li>
+<li>关系亲密的人也是因为兴趣相同，所以好友推荐引起的兴趣高</li>
+<li>但是并不是所有好友都有相同兴趣，所以利用链接预测的方法来找可以预测的好友，来进行推荐，可以弥补上述不足</li>
+</ul></div><div id="wmd-preview-section-2915" class="wmd-preview-section preview-content">
+
+<h2 id="本系统创新性改进方法">本系统创新性改进方法</h2>
+
+<ul><li>首先判断用户之间有没有好友关系存在</li>
+<li>互加好友用户的用户，计算关系权值，（User-based Connection Weight Score (CWS)）</li>
+<li>可能成为好友关系权值（User-based Prospective Connection Weight Score (PCWS) ）</li>
+<li>将关系权值（CWS/PCWS）考虑在内的相似度计算</li>
+<li>根据相似度的高低找出K个（Top-K ）与目标用户最相似的邻居（Nearest neighbor search ）</li>
+<li>在邻居喜欢的物品中，根据邻居与目标用户的远近程度算出每一件物品的推荐度</li>
+<li>根据每一件物品的推荐度高低给目标用户推荐物品。</li>
+</ul></div><div id="wmd-preview-section-3896" class="wmd-preview-section preview-content">
+
+<h2 id="training-dataset">Training dataset</h2>
+
+<p><a href="http://grouplens.org/datasets/movielens/" target="_blank">MovieLens Data Sets</a></p>
+
+</div><div id="wmd-preview-section-4047" class="wmd-preview-section preview-content">
+
+<h2 id="代码块">代码块</h2>
+
+</div><div id="wmd-preview-section-4112" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"><span class="hljs-prompt">... </span>访问链接<br></code></pre></div><div id="wmd-preview-section-2861" class="wmd-preview-section preview-content">
+
+<h2 id="系统可视化效果">系统可视化效果</h2>
+
+<p><img longdesc="./1446447438849.png" alt="Alt text" title="" type="image/png" src="./images/1446447438849.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>根据相似度排名直接可以得到最好的推荐效果</p>
+</blockquote></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../vendor/docs.min.js"></script>
+    <script type="text/javascript" src="../vendor/index.js"></script>
+</body>
+</html>

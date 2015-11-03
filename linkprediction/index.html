@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/style.css">
+    <title>韩力超 - 可靠的链路预测算法的精度比较评价指标</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" style="margin-top:20px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">韩力超的项目展示</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="main-nav">
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">项目<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../finger-car/index.html">指纹遥控器</a></li>
+                                <li><a href="../gesture/index.html">手势识别系统</a></li>
+                                <li><a href="../xillinx/index.html">高性能FPGA</a></li>
+                                <li><a href="../tiva/index.html">高性能嵌入式</a></li>
+                                <li><a href="../ocomm/index.html">可见光通信系统</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">科研<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../snrecommend/index.html">SN推荐系统</a></li>
+                                <li class="active"><a href="javascript:;">链路预测评价</a></li>
+                                <li><a href="../socomputing/index.html">社会计算应用</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-xs-1">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul class="nav bs-docs-sidenav">
+                        <!-- menu -->
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-10">
+                <div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-32" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-4163" class="wmd-preview-section preview-content">
+
+<h1 id="可靠的链路预测算法的精度比较评价指标">可靠的链路预测算法的精度比较评价指标</h1>
+
+<p>Reliable Evaluation Metric in Precision Comparison of Link Prediction Algorithms</p></div><div id="wmd-preview-section-4404" class="wmd-preview-section preview-content">
+
+<h2 id="研究背景">研究背景</h2>
+
+</div><div id="wmd-preview-section-4439" class="wmd-preview-section preview-content">
+
+<h3 id="链接预测">链接预测</h3>
+
+<blockquote>
+  <p>链接预测主要有两类研究内容：第一类是预测现阶段存在但是没有被发现的链接，第二个类是预测现阶段不存在但是未来会存在的链接。</p>
+  
+  <p>对于链接预测的研究国内外学者提出了很多种算法，一些学者提出了基于节点相似性的链接预测算法，认为两个节点的相似性越大，其发生链接的可能性越大。基于节点相似性的计算可以分为基于节点邻居和基于路径两种类型。关于基于节点邻居类型，通过计算两个节点的共同邻居数目确定节点相似性。</p>
+</blockquote></div><div id="wmd-preview-section-4525" class="wmd-preview-section preview-content">
+
+<h2 id="链接预测描述">链接预测描述</h2>
+
+<blockquote>
+  <p>将社会网络表示成一个无向图模型 ，其中V为图G中节点的集合，E为边的集合。对于图G中的每一对节点x和y，如果x和y之间没有一条边相连接，那么就要用链接预测算法计算该两个节点的相似性，节点相似性值的范围为0到正无穷大，两个节点的相似性越大，表示两个节点之间存在链接的可能性越大。基于节点相似性的链接预测算法通过计算节点相似性判断两个节点存在链接的可能性，然后将节点相似性的值进行从大到小排序。</p>
+  
+  <p>在实验的过程中，将现有社会网络的链接集合E分为训练边集合Et和测试边集合Ep 两个部分，将链接E中90% 的边标记为训练边，剩余10% 的边标记为测试边。为了对链接预测算法的效果进行评价。</p>
+  
+  <p>一个协同过滤算法的基本方法是对大批用户进行搜索，从中找出兴趣相似的用户群。算法会对这些人的所偏爱的内容进行考察，然后构造出推荐列表，推荐给该群体的用户。</p>
+</blockquote></div><div id="wmd-preview-section-5307" class="wmd-preview-section preview-content">
+
+<h3 id="传统-auc值评价预测精度">传统 AUC值评价预测精度</h3>
+
+<blockquote>
+  <p>实验一共进行N次比较，在比较中，如果有m次测试边分数值大于不存在边的分数值，n次两个分数值相等，则AUC定义为 。</p>
+  
+  <p>AUC值的大小可衡量算法的准确程度，AUC值越大，算法准确程度越高。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-5982" class="wmd-preview-section preview-content">
+
+<h2 id="相关节点之间相似度的度量">相关节点之间相似度的度量</h2>
+
+<blockquote>
+  <ul><li>CN算法 <br>
+  该算法的设计基于一个直观的假设，即两个节点的共同邻居节点数目越多，它们的相似度越大。具体的计算公式为 <br>
+  <img longdesc="./1446454285394.png" alt="Alt text" title="" type="image/png" src="./images/1446454285394.png" alt="Alt text" title="" type="image/png" > <br>
+  式中， 表示节点x的邻居节点集合， 表示节点y的邻居节点集合, 表示节点x和节点y的相似性。</li>
+  <li>AA算法： <br>
+  该算法先计算两个节点的共同邻居集合，在集合中计算每个元素节点度数的对数值倒数，然后将所有的值进行相加。具体的计算公式为 <br>
+  <img longdesc="./1446454327875.png" alt="Alt text" title="" type="image/png" src="./images/1446454327875.png" alt="Alt text" title="" type="image/png" > <br>
+  式中， 分别表示节点x和节点y的共同邻居节点集合，z表示的集合中的任何一个元素， 表示节点z的邻居集合。</li>
+  <li>RA算法 <br>
+  该算法先计算每一个ｘ和ｙ的共同邻居节点的度数，接着计算它们的倒数，最后将这些值进行相加计算。具体计算公式为 <br>
+  <img longdesc="./1446454454534.png" alt="Alt text" title="" type="image/png" src="./images/1446454454534.png" alt="Alt text" title="" type="image/png" > <br>
+  不难看出，RA算法与Adamic-Adar算法比较相似，它们的区别是把 换成了 。</li>
+  <li>其他相似性指标 <br>
+  <img longdesc="./1446454515584.png" alt="Alt text" title="" type="image/png" src="./images/1446454515584.png" alt="Alt text" title="" type="image/png" ></li>
+  </ul>
+</blockquote>
+
+</div><div id="wmd-preview-section-6022" class="wmd-preview-section preview-content">
+
+<h2 id="连接预测的实现步骤">连接预测的实现步骤</h2>
+
+</div><div id="wmd-preview-section-6079" class="wmd-preview-section preview-content">
+
+<h3 id="数据集分割">数据集分割</h3>
+
+<blockquote>
+  <p>首先对数据集进行分割，可以把数据集分成训练集和测试集。然后把把训练集里对应的节点之间的边去掉，然后预测其存在的概率。删边是选择已在训练集里的出现过的节点来操作，删除的边可以占总边数的10%代码中也可以实现改变分割比例。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-6336" class="wmd-preview-section preview-content">
+
+<h3 id="基于局部结构-共同邻居的连接关系计算">基于局部结构-共同邻居的连接关系计算</h3>
+
+<p>分别应用下述几种相似度测量方法计算出各节点之间的连接关系</p>
+
+<blockquote>
+  <ul><li>CN算法 <br>
+  *Salton算法 <br>
+  *Jaccard算法 <br>
+  *Sorenson算法</li>
+  <li>HPI算法 <br>
+  *HDI算法 <br>
+  *LHN算法 <br>
+  *AA算法</li>
+  <li>RA算法</li>
+  </ul>
+</blockquote>
+
+</div><div id="wmd-preview-section-6481" class="wmd-preview-section preview-content">
+
+<h3 id="新改良precision-score-评价指标分析各算法的精度">新改良Precision Score 评价指标分析各算法的精度</h3>
+
+<blockquote>
+  <p>基于此划分评估所有算法的精度重复前面两个过程N次，并取平均值和方差</p>
+</blockquote></div><div id="wmd-preview-section-5286" class="wmd-preview-section preview-content">
+
+<h2 id="本研究研究的精度比较评价指标">本研究研究的精度比较评价指标</h2>
+
+<p><strong>Precision Score (PS)</strong></p>
+
+<blockquote>
+  <p>对传统的AUC评价算法进行改进，在本测试数据集下，测试精度更高。</p>
+</blockquote></div><div id="wmd-preview-section-7096" class="wmd-preview-section preview-content">
+
+<h2 id="training-dataset">Training dataset</h2>
+
+<p><a href="http://undefined" target="_blank">Celegans</a></p></div><div id="wmd-preview-section-6614" class="wmd-preview-section preview-content">
+
+<h2 id="测试结果及分析">测试结果及分析</h2>
+
+</div><div id="wmd-preview-section-6972" class="wmd-preview-section preview-content">
+
+<h3 id="各边预测值">各边预测值</h3>
+
+<blockquote>
+  <p>将链接之间的存在的边的预测值写入EXCEL表格，其中因为为了得到更为精确的PS，执行了两次循环，所以有两次的预测值，并且预测值是按照从大到小的顺序排列 <br>
+  <img longdesc="./1446454737485.png" alt="Alt text" title="" type="image/png" src="./images/1446454737485.png" alt="Alt text" title="" type="image/png" ></p>
+  
+  <p>举例：Salton算法存在的边的预测值 <br>
+  <img longdesc="./1446454822322.png" alt="Alt text" title="" type="image/png" src="./images/1446454822322.png" alt="Alt text" title="" type="image/png" ></p>
+</blockquote>
+
+</div><div id="wmd-preview-section-7135" class="wmd-preview-section preview-content">
+
+<h3 id="ps值">PS值</h3>
+
+<p><img longdesc="./1446451661688.png" alt="Alt text" title="" type="image/png" src="./images/1446451661688.png" alt="Alt text" title="" type="image/png" ></p>
+
+<blockquote>
+  <p>各个算法的精度计算结果</p>
+</blockquote></div><div id="wmd-preview-section-7117" class="wmd-preview-section preview-content">
+
+<h2 id="代码块">代码块</h2>
+
+</div><div id="wmd-preview-section-7118" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"><span class="hljs-prompt">... </span>访问链接<br></code></pre></div><div id="wmd-preview-section-7385" class="wmd-preview-section preview-content">
+
+<h2 id="反馈与建议">反馈与建议</h2>
+
+<ul><li>微博：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">hanlichao1993</a></li>
+<li>邮箱：<a href="mailto:hanlichao@bupt.edu.cn" target="_blank">hanlichao@bupt.edu.cn</a></li>
+</ul>
+
+<hr>
+
+<p>感谢阅读</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../vendor/docs.min.js"></script>
+    <script type="text/javascript" src="../vendor/index.js"></script>
+</body>
+</html>

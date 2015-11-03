@@ -1,0 +1,3 @@
+# sublime replacement: image data to src
+<img longdesc="\./(.+?)"(.+?)src="(.+?)"(.+?)>
+<img longdesc="./$1"$2src="./images/$1"$2>
