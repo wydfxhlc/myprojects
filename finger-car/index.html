@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/style.css">
-    <title>L.C. Han - 智能指纹识别汽车遥控器系统</title>
+    <title>L.C. Han - Intelligent Car Remote System Based on Fingerprint Recognition</title>
 </head>
 <body>
     <div class="container">
@@ -48,48 +48,45 @@
             <div class="col-xs-3">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" data-offset-top="60">
                   <ul class="nav bs-docs-sidenav">
-                    <li><a href="#概述">概述</a><ul class="nav">
-                    <li><a href="#产品特点">产品特点</a></li>
-                    <li><a href="#应用前景">应用前景</a></li>
+                    <li><a href="#summary">Summary</a><ul class="nav">
+                    <li><a href="#product-feature">Product Feature</a></li>
+                    <li><a href="#potential-applications">Potential Applications</a></li>
                     </ul>
                     </li>
-                    <li><a href="#作品设计与实现">作品设计与实现</a><ul class="nav">
-                    <li><a href="#三个基本假设">三个基本假设</a></li>
-                    <li><a href="#系统总体架构">系统总体架构</a></li>
-                    <li><a href="#系统分架构">系统分架构</a><ul class="nav">
-                    <li><a href="#基于r1020的指纹识别系统">基于R1020的指纹识别系统</a></li>
-                    <li><a href="#基于嵌入式linux系统的开发">基于嵌入式Linux系统的开发</a></li>
-                    <li><a href="#采用基带传输方式进行通信">采用基带传输方式进行通信</a></li>
+                    <li><a href="#design-and-implementation">Design and Implementation</a><ul class="nav">
+                    <li><a href="#three-basic-assumptions">Three Basic Assumptions</a></li>
+                    <li><a href="#system-general-structure">System General Structure</a></li>
+                    <li><a href="#subsystem-structure">Subsystem Structure</a><ul class="nav">
+                    <li><a href="#fingerprint-recognition-system-based-on-r1020">Fingerprint Recognition System Based on R1020</a></li>
+                    <li><a href="#system-development-based-on-embedded-linux-system">System Development Based on Embedded Linux System</a></li>
+                    <li><a href="#communication-on-baseband-transmission">Communication on Baseband Transmission</a></li>
                     </ul>
                     </li>
-                    <li><a href="#总体流程">总体流程</a></li>
-                    <li><a href="#具体实现方案">具体实现方案</a><ul class="nav">
-                    <li><a href="#面向无连接基带传输协议传输数据">面向无连接基带传输协议传输数据</a></li>
-                    <li><a href="#即生即用的非记忆性存储">即生即用的非记忆性存储</a><ul class="nav">
-                    <li><a href="#发送伪数据防盗取机制">发送伪数据防盗取机制</a></li>
+                    <li><a href="#total-flow">Total Flow</a></li>
+                    <li><a href="#detailed-implementation-scheme">Detailed Implementation Scheme</a><ul class="nav">
+                    <li><a href="#oriented-connectionless-baseband-transmission-protocol">Oriented Connectionless Baseband Transmission Protocol</a></li>
+                    <li><a href="#constant-and-non-memorable-storage">Constant and Non Memorable Storage</a></li>
+                    <li><a href="#pseudo-data-mechanism-for-security">Pseudo-data Mechanism for Security</a></li>
+                    <li><a href="#effectiveness-of-data">Effectiveness of Data</a></li>
+                    <li><a href="#improved-rsa-asymmetric-cryptographic-algorithm">Improved RSA Asymmetric Cryptographic Algorithm</a></li>
+                    <li><a href="#black-box-function">Black Box Function</a></li>
                     </ul>
                     </li>
-                    <li><a href="#数据的实效性">数据的实效性</a></li>
-                    <li><a href="#改良的rsa非对称加密算法">改良的RSA非对称加密算法</a></li>
-                    <li><a href="#黑匣子功能">“黑匣子”功能</a></li>
                     </ul>
                     </li>
+                    <li><a href="#test-and-analysis">Test and Analysis</a><ul class="nav">
+                    <li><a href="#the-test-environment-foundation">The Test Environment Foundation</a></li>
+                    <li><a href="#test-procedure">Test Procedure</a></li>
+                    <li><a href="#security-testing-process">Security Testing Process</a></li>
+                    <li><a href="#test-result">Test Result</a></li>
                     </ul>
                     </li>
-                    <li><a href="#作品测试与分析">作品测试与分析</a><ul class="nav">
-                    <li><a href="#测试环境搭建">测试环境搭建</a></li>
-                    <li><a href="#测试过程">测试过程</a></li>
-                    <li><a href="#安全性测试过程">安全性测试过程</a></li>
-                    <li><a href="#测试结果">测试结果</a></li>
+                    <li><a href="#innovation-piont-instructions">Innovation Piont Instructions</a><ul class="nav">
+                    <li><a href="#existing-implementations">Existing Implementations</a></li>
+                    <li><a href="#innovative-implementation">Innovative Implementation</a></li>
                     </ul>
                     </li>
-                    <li><a href="#创新性说明">创新性说明</a><ul class="nav">
-                    <li><a href="#现有实现方式">现有实现方式</a></li>
-                    <li><a href="#本系统实现方式">本系统实现方式</a></li>
-                    <li><a href="#代码块">代码块</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#反馈与建议">反馈与建议</a></li>
+                    <li><a href="#code">Code</a></li>
                     </ul>
                     </li>
                   </ul>
@@ -99,63 +96,67 @@
 
             <div id='preview-contents' class='note-content'>
                         <div id="wmd-preview" class="preview-content"></div>
-                    <div id="wmd-preview-section-17755" class="wmd-preview-section preview-content">
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-19337" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-142" class="wmd-preview-section preview-content">
 
-<h1 id="智能指纹识别汽车遥控器系统">智能指纹识别汽车遥控器系统</h1>
+<h1 id="intelligent-car-remote-system-based-on-fingerprint-recognition">Intelligent Car Remote System Based on Fingerprint Recognition</h1>
 
-<p>Intelligent Car Remote System Based on Fingerprint Recognition</p>
+<p>智能指纹识别汽车遥控器系统</p>
 
 <p></p>
 
 <hr>
 
 <div><div class="toc"><div class="toc">
-<ul>
+<ul class="nav">
 
 </ul>
 </div>
 </div>
-</div></div><div id="wmd-preview-section-17757" class="wmd-preview-section preview-content">
+</div>
 
-<h2 id="概述">概述</h2>
+</div><div id="wmd-preview-section-143" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-17758" class="wmd-preview-section preview-content">
+<h2 id="summary">Summary</h2>
 
-<h3 id="产品特点">产品特点</h3>
+</div><div id="wmd-preview-section-144" class="wmd-preview-section preview-content">
+
+<h3 id="product-feature">Product Feature</h3>
+
+<p>产品特点</p>
 
 <blockquote>
-  <ul><li>指纹唯一性确保安全 <br>
-  <ul><li>通信传输协议安全</li>
-  <li>数据处理、加密方式保证安全性</li>
-  <li>传统的“钥匙”更迭为数据处理工具时，“钥匙”更换成本低廉</li>
-  <li>丢失钥匙烦恼几乎降低为0</li>
-  <li>系统安全性几乎达到100%</li>
-  <li>指纹唯一性确保安全</li>
+  <ul><li>指纹唯一性确保安全</li>
   <li>通信传输协议安全</li>
   <li>数据处理、加密方式保证安全性</li>
   <li>传统的“钥匙”更迭为数据处理工具时，“钥匙”更换成本低廉</li>
   <li>丢失钥匙烦恼几乎降低为0</li>
   <li>系统安全性几乎达到100%</li>
-  </ul> <br>
-  </li></ul></blockquote></div><div id="wmd-preview-section-17759" class="wmd-preview-section preview-content">
-  
+  </ul>
+</blockquote>
 
+</div><div id="wmd-preview-section-145" class="wmd-preview-section preview-content">
 
-<h3 id="应用前景">应用前景</h3>
+<h3 id="potential-applications">Potential Applications</h3>
+
+<p>应用前景</p>
 
 <blockquote>
   <p>成本较低，有着极高的性价比，这使得产品可以推广到一些相对来说价值稍低，但同样有着较高安全需求的物品保管领域中。因为人的指纹具有唯一性，具有指纹识别记录的系统可以在交通事故调查方面提供线索和证据，提高了警方的办案效率，为其提供了一种新的调查途径等。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-17760" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-146" class="wmd-preview-section preview-content">
 
-<h2 id="作品设计与实现">作品设计与实现</h2>
+<h2 id="design-and-implementation">Design and Implementation</h2>
 
-</div><div id="wmd-preview-section-17761" class="wmd-preview-section preview-content">
+<p>作品设计与实现</p>
 
-<h3 id="三个基本假设">三个基本假设</h3>
+</div><div id="wmd-preview-section-147" class="wmd-preview-section preview-content">
+
+<h3 id="three-basic-assumptions">Three Basic Assumptions</h3>
+
+<p>三个基本假设</p>
 
 <blockquote>
   <p>以下三个基本假设是本方案提出的基本理论依据。</p>
@@ -165,22 +166,28 @@
   <li>指纹和RSA鉴权方式是可靠的</li>
   </ul>
   
-  </blockquote></div><div id="wmd-preview-section-17762" class="wmd-preview-section preview-content">
+  </blockquote></div><div id="wmd-preview-section-148" class="wmd-preview-section preview-content">
 
 
-<h3 id="系统总体架构">系统总体架构</h3>
+<h3 id="system-general-structure">System General Structure</h3>
+
+<p>系统总体架构</p>
 
 <blockquote>
   <p>本系统中，使用嵌入式Linux机作为上位机，R1020作下位机，处理速度快，功能强大。同时使用基带通信的方式，大大减少了通信的成本，并提高了效率。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-17763" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-149" class="wmd-preview-section preview-content">
 
-<h3 id="系统分架构">系统分架构</h3>
+<h3 id="subsystem-structure">Subsystem Structure</h3>
 
-</div><div id="wmd-preview-section-18725" class="wmd-preview-section preview-content">
+<p>系统分架构</p>
 
-<h4 id="基于r1020的指纹识别系统">基于R1020的指纹识别系统</h4>
+</div><div id="wmd-preview-section-150" class="wmd-preview-section preview-content">
+
+<h4 id="fingerprint-recognition-system-based-on-r1020">Fingerprint Recognition System Based on R1020</h4>
+
+<p>基于R1020的指纹识别系统</p>
 
 <blockquote>
   <ul><li>上传指纹特征数据到主机,下载指纹特征数据到模块(入库/验证/识别)；</li>
@@ -188,23 +195,34 @@
   <li>检查指定编号范围内的已注册保存在模块闪存内的指纹模板数据是否有坏损情况；</li>
   <li>设置/读取指纹模块的序列号。</li>
   </ul>
-</blockquote></div><div id="wmd-preview-section-18757" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="基于嵌入式linux系统的开发">基于嵌入式Linux系统的开发</h4>
+</div><div id="wmd-preview-section-151" class="wmd-preview-section preview-content">
+
+<h4 id="system-development-based-on-embedded-linux-system">System Development Based on Embedded Linux System</h4>
+
+<p>基于嵌入式Linux系统的开发</p>
 
 <blockquote>
   <p>实时性能RT_Linux Hardhat Linux 等嵌入式Linux支持，实时性能稳定性好安全性好。</p>
-</blockquote></div><div id="wmd-preview-section-18789" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="采用基带传输方式进行通信">采用基带传输方式进行通信</h4>
+</div><div id="wmd-preview-section-152" class="wmd-preview-section preview-content">
+
+<h4 id="communication-on-baseband-transmission">Communication on Baseband Transmission</h4>
+
+<p>采用基带传输方式进行通信</p>
 
 <blockquote>
   <p>基带传输，是一种不搬移基带信号频谱的传输方式。</p>
-</blockquote></div><div id="wmd-preview-section-17767" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h3 id="总体流程">总体流程</h3>
+</div><div id="wmd-preview-section-213" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446397683052.png" alt="Alt text" title="" type="image/png" src="./images/1446397683052.png" alt="Alt text" title="" type="image/png" ></p>
+<h3 id="total-flow">Total Flow</h3>
+
+<p>总体流程 <br>
+<img longdesc="./1446397683052.png" alt="Alt text" title="" type="image/png" src="./images/1446397683052.png" alt="Alt text" title="" type="image/png" ></p>
 
 <blockquote>
   <ul><li>初始化车载端指纹模块，初始化操作需要按两次指纹，如果两次指纹匹配成功，则初始化成功，否则需要重新做初始化。</li>
@@ -222,130 +240,169 @@
   <li>车载端利用当时本地时间来作为私钥来对密文A对称解密得到指纹信息F。</li>
   <li>指纹信息F与车载本地指纹进行匹配，匹配成功则打开车门，匹配不成功则返回(c)。</li>
   </ul>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-154" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-17768" class="wmd-preview-section preview-content">
+<h3 id="detailed-implementation-scheme">Detailed Implementation Scheme</h3>
 
-<h3 id="具体实现方案">具体实现方案</h3>
+<p>具体实现方案</p>
 
-</div><div id="wmd-preview-section-18823" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-155" class="wmd-preview-section preview-content">
 
-<h4 id="面向无连接基带传输协议传输数据">面向无连接基带传输协议传输数据</h4>
+<h4 id="oriented-connectionless-baseband-transmission-protocol">Oriented Connectionless Baseband Transmission Protocol</h4>
+
+<p>面向无连接基带传输协议传输数据</p>
 
 <blockquote>
   <p>本系统的基带传输协议中允许随时广播消息，为后续伪数据防盗提供平台。本方案利用了非对称加密当中私钥签名的特点，这样，整个基带传输协议是完全可以公开的。在系统模拟的过程中采用同是无连接传输数据的UDP来模拟面向无连接的基带传输数据的方式。   </p>
-</blockquote></div><div id="wmd-preview-section-18855" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="即生即用的非记忆性存储">即生即用的非记忆性存储</h4>
+</div><div id="wmd-preview-section-156" class="wmd-preview-section preview-content">
+
+<h4 id="constant-and-non-memorable-storage">Constant and Non Memorable Storage</h4>
+
+<p>即生即用的非记忆性存储</p>
 
 <blockquote>
   <p>在指纹传输中，我们应用即生即用的指纹特征作为秘钥，来加密用户的指纹信息，做到了在钥匙端不存储任何信息的特点。</p>
-</blockquote></div><div id="wmd-preview-section-17771" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h5 id="发送伪数据防盗取机制">发送伪数据防盗取机制</h5>
+</div><div id="wmd-preview-section-157" class="wmd-preview-section preview-content">
+
+<h4 id="pseudo-data-mechanism-for-security">Pseudo-data Mechanism for Security</h4>
+
+<p>发送伪数据防盗取机制</p>
 
 <blockquote>
   <p>本系统设计了基于系统时间的令牌机制，系统会不时向外广播一串一串的私钥加密的时间戳，不同的时间戳用不同的token进行标记，其中只有一个时间戳为正确时间戳，也只有保证这个时间戳的准确才能完成后续的对称加解密。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-18888" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-158" class="wmd-preview-section preview-content">
 
-<h4 id="数据的实效性">数据的实效性</h4>
+<h4 id="effectiveness-of-data">Effectiveness of Data</h4>
+
+<p>数据的实效性</p>
 
 <blockquote>
   <p>车载端一直在向外广播数据签名过的时间戳信息，时效性为1s，1s之内没有返回数据消息就自动失效。程序执行时间、数据传输时间总共不会超过500ms，防止黑客利用重放技术来攻击系统。</p>
-</blockquote></div><div id="wmd-preview-section-18951" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="改良的rsa非对称加密算法">改良的RSA非对称加密算法</h4>
+</div><div id="wmd-preview-section-159" class="wmd-preview-section preview-content">
+
+<h4 id="improved-rsa-asymmetric-cryptographic-algorithm">Improved RSA Asymmetric Cryptographic Algorithm</h4>
+
+<p>改良的RSA非对称加密算法</p>
 
 <blockquote>
   <p>根据系统的设计要求，本系统与传统RSA应用系统的一个重大区别在于，改良RSA系统即生即用，不保存自己的密钥和对方的公钥。</p>
-</blockquote></div><div id="wmd-preview-section-18921" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="黑匣子功能">“黑匣子”功能</h4>
+</div><div id="wmd-preview-section-160" class="wmd-preview-section preview-content">
+
+<h4 id="black-box-function">Black Box Function</h4>
+
+<p>“黑匣子”功能</p>
 
 <blockquote>
   <p>我们建立的用户管理系统，拥有用户记录的功能，可以作为行车记录的“黑匣子”，由于通过指纹唯一确定个人的身份，一旦涉案等特殊情况发生，可以提供追查途径。</p>
-</blockquote></div><div id="wmd-preview-section-17775" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h2 id="作品测试与分析">作品测试与分析</h2>
+</div><div id="wmd-preview-section-161" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-17776" class="wmd-preview-section preview-content">
+<h2 id="test-and-analysis">Test and Analysis</h2>
 
-<h3 id="测试环境搭建">测试环境搭建</h3>
+<p>作品测试与分析</p>
+
+</div><div id="wmd-preview-section-162" class="wmd-preview-section preview-content">
+
+<h3 id="the-test-environment-foundation">The Test Environment Foundation</h3>
+
+<p>测试环境搭建</p>
 
 <blockquote>
   <p>本测试系统中，使用嵌入式Linux机作为上位机，基于FPC1020面阵式半导体电容指纹传感器开发的指纹识别模块R1020作下位机，结合PC机模拟汽车系统，完成系统测试。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-17777" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-523" class="wmd-preview-section preview-content">
 
-<h3 id="测试过程">测试过程</h3>
+<h3 id="test-procedure">Test Procedure</h3>
 
-<p>如图是汽车的外观、汽车的仪表盘和我们的Fingerprint Car Remotecontrol。 <br>
-<img longdesc="./1446397844544.png" alt="Alt text" title="" type="image/png" src="./images/1446397844544.png" alt="Alt text" title="" type="image/png" > <br>
-汽车外观及仪表盘</p>
+<p>测试过程 <br>
+ 如图是汽车的外观、汽车的仪表盘和我们的指纹遥控器。 <br>
+<img longdesc="./1446397844544.png" alt="Alt text" title="" type="image/png" src="./images/1446397844544.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p><img longdesc="./1446397896061.png" alt="Alt text" title="" type="image/png" src="./images/1446397896061.png" alt="Alt text" title="" type="image/png" > <br>
-Fingerprint Car Remotecontrol</p>
+<p>Car appearance and dashboard</p>
+
+<p><img longdesc="./1446397896061.png" alt="Alt text" title="" type="image/png" src="./images/1446397896061.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Fingerprint remote control</p>
 
 <blockquote>
   <p>车锁打开时，汽车车灯会闪烁两次。车锁锁闭时，汽车车灯会闪烁一次。仪表盘上面的提示框会显示当前汽车的状态或需要用户进行的操作。我们可以看到，现在汽车处于开放状态，当前汽车没有匹配的指纹，需要进行初始化。</p>
 </blockquote>
 
-<p><img longdesc="./1446397954378.png" alt="Alt text" title="" type="image/png" src="./images/1446397954378.png" alt="Alt text" title="" type="image/png" > <br>
-需要进行初始化</p>
+<p><img longdesc="./1446397954378.png" alt="Alt text" title="" type="image/png" src="./images/1446397954378.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p><img longdesc="./1446397992727.png" alt="Alt text" title="" type="image/png" src="./images/1446397992727.png" alt="Alt text" title="" type="image/png" > <br>
-初始化成功</p>
+<p>Need to be initialized</p>
+
+<p><img longdesc="./1446397992727.png" alt="Alt text" title="" type="image/png" src="./images/1446397992727.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Initialized successfully</p>
 
 <blockquote>
-  <p>演示使用指纹操作Fingerprint Car Remotecontrol来锁闭车门。按下指纹，车门锁闭。车灯闪烁一次，提示框提示车门锁闭。</p>
+  <p>演示使用指纹操作指纹遥控器来锁闭车门。按下指纹，车门锁闭。车灯闪烁一次，提示框提示车门锁闭。</p>
 </blockquote>
 
-<p><img longdesc="./1446398020006.png" alt="Alt text" title="" type="image/png" src="./images/1446398020006.png" alt="Alt text" title="" type="image/png" > <br>
-锁闭车门</p>
+<p><img longdesc="./1446398020006.png" alt="Alt text" title="" type="image/png" src="./images/1446398020006.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Door locked</p>
 
 <blockquote>
   <p>再次按下指纹，车门打开，车灯闪烁两次，提示框提示车锁打开且可以重置指纹。仅有当车门打开时指纹才能被重置，重置指纹的操作步骤与初始化相同。重复几次这样的操作。发现系统运行正常。</p>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-584" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-17778" class="wmd-preview-section preview-content">
+<h3 id="security-testing-process">Security Testing Process</h3>
 
-<h3 id="安全性测试过程">安全性测试过程</h3>
+<p>安全性测试过程</p>
 
 <blockquote>
-  <p>使用错误的指纹操作Fingerprint Car Remotecontrol，可以看到车门无法打开或锁闭。</p>
+  <p>使用错误的指纹操作指纹遥控器，可以看到车门无法打开或锁闭。</p>
 </blockquote>
 
-<p><img longdesc="./1446398058357.png" alt="Alt text" title="" type="image/png" src="./images/1446398058357.png" alt="Alt text" title="" type="image/png" > <br>
-车门未打开</p>
+<p><img longdesc="./1446398058357.png" alt="Alt text" title="" type="image/png" src="./images/1446398058357.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-17779" class="wmd-preview-section preview-content">
+<p>Door still closed</p></div><div id="wmd-preview-section-165" class="wmd-preview-section preview-content">
 
-<h3 id="测试结果">测试结果</h3>
+<h3 id="test-result">Test Result</h3>
+
+<p>测试结果</p>
 
 <blockquote>
   <p>测试结果符合预期要求，完美实现了指纹智能指纹识别汽车遥控器系统。安全性测试结果良好，安全有保证。 </p>
 </blockquote>
 
-</div><div id="wmd-preview-section-17780" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-166" class="wmd-preview-section preview-content">
 
-<h2 id="创新性说明">创新性说明</h2>
+<h2 id="innovation-piont-instructions">Innovation Piont Instructions</h2>
 
-</div><div id="wmd-preview-section-17781" class="wmd-preview-section preview-content">
+<p>创新性说明</p>
 
-<h3 id="现有实现方式">现有实现方式</h3>
+</div><div id="wmd-preview-section-167" class="wmd-preview-section preview-content">
+
+<h3 id="existing-implementations">Existing Implementations</h3>
+
+<p>现有实现方式</p>
 
 <blockquote>
-  <ul><li>现有的数据传输链路</li>
-  <li>可记忆存储</li>
+  <ul><li>The existing data transmission link</li>
+  <li>Memorable storage</li>
   </ul>
 </blockquote>
 
-</div><div id="wmd-preview-section-17782" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-168" class="wmd-preview-section preview-content">
 
-<h3 id="本系统实现方式">本系统实现方式</h3>
+<h3 id="innovative-implementation">Innovative Implementation</h3>
+
+<p>本系统实现方式</p>
 
 <blockquote>
   <ul><li>面向无连接基带传输协议传输数据</li>
@@ -358,25 +415,25 @@ Fingerprint Car Remotecontrol</p>
   </ul>
 </blockquote>
 
-</div><div id="wmd-preview-section-17783" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-169" class="wmd-preview-section preview-content">
 
-<h3 id="代码块">代码块</h3>
+<h2 id="code">Code</h2>
 
-</div><div id="wmd-preview-section-17784" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-170" class="wmd-preview-section preview-content">
 
-<pre class="prettyprint hljs-dark"><code class="language-python hljs"><br><span class="hljs-prompt">... </span>访问链接<br></code></pre>
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"><br><span class="hljs-prompt">... </span>updating<br><br></code></pre>
 
-</div><div id="wmd-preview-section-18715" class="wmd-preview-section preview-content">
+<hr>
 
-<h2 id="反馈与建议">反馈与建议</h2>
+<p><strong>Feedback and Suggestions</strong></p>
 
-<ul><li>Sina微博：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">@hanlichao1993</a></li>
-<li>邮箱：<a href="mailto:hanlicao@bupt.edu.cn" target="_blank">hanlicao@bupt.edu.cn</a></li>
+<ul><li>Sina Microblog：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">@hanlichao1993</a></li>
+<li>E-mail <a href="mailto:hanlicao@bupt.edu.cn" target="_blank">hanlicao@bupt.edu.cn</a></li>
 </ul>
 
 <hr>
 
-<p>感谢阅读</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+<p>Thanks.</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
 
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>

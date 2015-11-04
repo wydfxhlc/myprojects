@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/style.css">
-    <title>L.C. Han - 基于TI Tiva-C开发板的High-Performance Embedded Softwares开发</title>
+    <title>L.C. Han - Energy-efficient embedded development based on TI Tiva-C series processors</title>
 </head>
 <body>
     <div class="container">
@@ -48,26 +48,25 @@
             <div class="col-xs-3">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
                     <ul class="nav bs-docs-sidenav">
-                        <li><a href="#原理">原理</a><ul class="nav">
-                        <li><a href="#恒流源测量电阻的原理">恒流源测量电阻的原理</a></li>
-                        <li><a href="#仪表放大器ina333的原理">仪表放大器INA333的原理</a></li>
-                        <li><a href="#仪用放大器特点">仪用放大器特点</a></li>
-                        <li><a href="#δ-σ型adc的原理">Δ-Σ型ADC的原理</a></li>
-                        <li><a href="#δ-σ型adc特点">Δ-Σ型ADC特点</a></li>
+                        <li><a href="#fundamentals">Fundamentals</a><ul class="nav">
+                        <li><a href="#resistance-measurement-with-constant-current-source">Resistance Measurement with Constant-current Source</a></li>
+                        <li><a href="#instrumentation-amplifier-ina333">Instrumentation Amplifier INA333</a></li>
+                        <li><a href="#feature-of-instrumentation-amplifier">Feature of Instrumentation Amplifier</a></li>
+                        <li><a href="#δ-ς-adc">Δ-Σ-ADC</a></li>
+                        <li><a href="#δ-ς-adc-feature">Δ-Σ-ADC Feature</a></li>
                         </ul>
                         </li>
-                        <li><a href="#实验实现方案">实验实现方案</a></li>
-                        <li><a href="#实验结果">实验结果</a><ul class="nav">
-                        <li><a href="#电桥仪用放大器测电阻">电桥+仪用放大器测电阻</a></li>
-                        <li><a href="#恒流源仪用放大器型adc测电阻">恒流源+仪用放大器型ADC测电阻</a></li>
-                        <li><a href="#电桥-δ-σ型adc测电阻">电桥-Δ-Σ型ADC测电阻</a></li>
-                        <li><a href="#ina输出受ref的影响">INA输出受Ref的影响</a></li>
-                        <li><a href="#特殊现象分析">特殊现象分析</a></li>
+                        <li><a href="#implementation-scheme">Implementation Scheme</a></li>
+                        <li><a href="#result-of-resistance-measurement">Result of Resistance Measurement</a><ul class="nav">
+                        <li><a href="#electrical-bridge-instrumentation-amplifier">Electrical bridge +Instrumentation Amplifier</a></li>
+                        <li><a href="#constant-current-source-adc-instrumentation-amplifier">Constant-current Source+ ADC Instrumentation Amplifier</a></li>
+                        <li><a href="#electrical-bridgeδ-ς-adc-instrumentation-amplifier">Electrical Bridge+Δ-Σ-ADC Instrumentation Amplifier</a></li>
+                        <li><a href="#ina-influenced-by-ref">INA Influenced  by Ref</a></li>
+                        <li><a href="#special-phenomenon-analysis">Special Phenomenon Analysis</a></li>
                         </ul>
                         </li>
-                        <li><a href="#实验总结">实验总结</a></li>
-                        <li><a href="#代码实现">代码实现</a></li>
-                        <li><a href="#反馈与建议">反馈与建议</a></li>
+                        <li><a href="#summary">Summary</a></li>
+                        <li><a href="#code">Code</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -78,11 +77,11 @@
                         <div id="wmd-preview" class="preview-content"></div>
                     <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3821" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-2" class="wmd-preview-section preview-content">
 
-<h1 id="基于ti-tiva-c开发板的High-Performance Embedded Softwares开发">基于TI Tiva-C开发板的High-Performance Embedded Softwares开发</h1>
+<h1 id="energy-efficient-embedded-development-based-on-ti-tiva-c-series-processors">Energy-efficient embedded development based on TI Tiva-C series processors</h1>
 
-<p>Energy-efficient embedded development based on TI Tiva-C series processors</p>
+<p><strong>Resistance Measurement</strong>- one example out of three</p>
 
 <hr>
 
@@ -92,179 +91,179 @@
 </ul>
 </div>
 </div>
-</div></div><div id="wmd-preview-section-3898" class="wmd-preview-section preview-content">
+</div>
 
-<h2 id="原理">原理</h2>
+</div><div id="wmd-preview-section-3" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446471023547.png" alt="Alt text" title="" type="image/png" src="./images/1446471023547.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-3880" class="wmd-preview-section preview-content">
+<h2 id="fundamentals">Fundamentals</h2>
 
-<h3 id="恒流源测量电阻的原理">恒流源测量电阻的原理</h3>
+<p><img longdesc="./1446471023547.png" alt="Alt text" title="" type="image/png" src="./images/1446471023547.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p><img longdesc="./1446471047619.png" alt="Alt text" title="" type="image/png" src="./images/1446471047619.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-3658" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-4" class="wmd-preview-section preview-content">
 
-<h3 id="仪表放大器ina333的原理">仪表放大器INA333的原理</h3>
+<h3 id="resistance-measurement-with-constant-current-source">Resistance Measurement with Constant-current Source</h3>
+
+<p>恒流源测量电阻的原理 <br>
+<img longdesc="./1446471047619.png" alt="Alt text" title="" type="image/png" src="./images/1446471047619.png" alt="Alt text" title="" type="image/png" ></p>
+
+</div><div id="wmd-preview-section-5" class="wmd-preview-section preview-content">
+
+<h3 id="instrumentation-amplifier-ina333">Instrumentation Amplifier INA333</h3>
 
 <blockquote>
   <p>A1、A2 高输入阻抗同相放大器, A3 为差动放大器。但前面所述的同相放大器的连线方式, 与此处的同相放大器不一样, 此处的同相放大器的反相端的接地电阻 R1 并不直接接地, 而是将两个放大器的反相端通过R1直接相连。</p>
 </blockquote>
 
-<p>INA333仪用放大器的放大倍数为</p>
+<p>Amplification factor of INA333</p>
 
 <blockquote>
   <p><img longdesc="./1446471176050.png" alt="Alt text" title="" type="image/png" src="./images/1446471176050.png" alt="Alt text" title="" type="image/png" ></p>
 </blockquote>
 
-</div><div id="wmd-preview-section-3659" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-6" class="wmd-preview-section preview-content">
 
-<h3 id="仪用放大器特点">仪用放大器特点</h3>
+<h3 id="feature-of-instrumentation-amplifier">Feature of Instrumentation Amplifier</h3>
 
 <ul><li>高共模抑制比</li>
 <li>小线性误差</li>
-<li><p>高输入阻抗和低噪</p>
-
-<p><img longdesc="./1446471281007.png" alt="Alt text" title="" type="image/png" src="./images/1446471281007.png" alt="Alt text" title="" type="image/png" > <br>
-实验板实际电路</p></li>
+<li>高输入阻抗和低噪</li>
 </ul>
 
-</div><div id="wmd-preview-section-3660" class="wmd-preview-section preview-content">
+<p><img longdesc="./1446471281007.png" alt="Alt text" title="" type="image/png" src="./images/1446471281007.png" alt="Alt text" title="" type="image/png" ></p>
 
-<h3 id="δ-σ型adc的原理">Δ-Σ型ADC的原理</h3>
+<p>Real circuit board </p>
+
+</div><div id="wmd-preview-section-7" class="wmd-preview-section preview-content">
+
+<h3 id="δ-ς-adc">Δ-Σ-ADC</h3>
 
 <ul><li>Σ-Δ调制技术，其基本概念是利用反馈环来提高粗糙量化器的有效分辨率并整形其量化噪声。</li>
-<li><p>Sigmadelta调制器是给1个Delta调制器的前端加上环路滤波器并把其放入环路中来构成的。在简单情况下，积分器可被用作环路滤波器。因此，Sigmadelta调制器主要是由前端的积分器，1位A/D及反馈环路中的1位D/A来组成。</p>
-
-<p><img longdesc="./1446471374169.png" alt="Alt text" title="" type="image/png" src="./images/1446471374169.png" alt="Alt text" title="" type="image/png" ></p></li>
+<li>Sigmadelta调制器是给1个Delta调制器的前端加上环路滤波器并把其放入环路中来构成的。在简单情况下，积分器可被用作环路滤波器。因此，Sigmadelta调制器主要是由前端的积分器，1位A/D及反馈环路中的1位D/A来组成。</li>
 </ul>
 
-</div><div id="wmd-preview-section-3661" class="wmd-preview-section preview-content">
+<p><img longdesc="./1446471374169.png" alt="Alt text" title="" type="image/png" src="./images/1446471374169.png" alt="Alt text" title="" type="image/png" ></p>
 
-<h3 id="δ-σ型adc特点">Δ-Σ型ADC特点</h3>
+</div><div id="wmd-preview-section-8" class="wmd-preview-section preview-content">
+
+<h3 id="δ-ς-adc-feature">Δ-Σ-ADC Feature</h3>
 
 <ul><li>分辨率高</li>
 <li>线性度好</li>
 <li>成本低</li>
-<li><img longdesc="./1446471461607.png" alt="Alt text" title="" type="image/png" src="./images/1446471461607.png" alt="Alt text" title="" type="image/png" > <br>
-实验板实际电路</li>
+<li><img longdesc="./1446471461607.png" alt="Alt text" title="" type="image/png" src="./images/1446471461607.png" alt="Alt text" title="" type="image/png" ></li>
 </ul>
 
-</div><div id="wmd-preview-section-4075" class="wmd-preview-section preview-content">
+<p>实验板实际电路</p>
 
-<h2 id="实验实现方案">实验实现方案</h2>
+</div><div id="wmd-preview-section-9" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446471495482.png" alt="Alt text" title="" type="image/png" src="./images/1446471495482.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-3663" class="wmd-preview-section preview-content">
+<h2 id="implementation-scheme">Implementation Scheme</h2>
 
-<h2 id="实验结果">实验结果</h2>
+<p><img longdesc="./1446471495482.png" alt="Alt text" title="" type="image/png" src="./images/1446471495482.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-3664" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-10" class="wmd-preview-section preview-content">
 
-<h3 id="电桥仪用放大器测电阻">电桥+仪用放大器测电阻</h3>
+<h2 id="result-of-resistance-measurement">Result of Resistance Measurement</h2>
 
-<p>实验原始数据 <br>
+</div><div id="wmd-preview-section-29" class="wmd-preview-section preview-content">
+
+<h3 id="electrical-bridge-instrumentation-amplifier">Electrical bridge +Instrumentation Amplifier</h3>
+
+<p>Experimental initial data  <br>
 <img longdesc="./1446471593727.png" alt="Alt text" title="" type="image/png" src="./images/1446471593727.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>折线化表示 <br>
+<p>Line chart <br>
 <img longdesc="./1446471669919.png" alt="Alt text" title="" type="image/png" src="./images/1446471669919.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>结果分析</p>
+<p>Analysis of Result</p>
 
 <blockquote>
   <p>从上面的曲线中可以看出，INA输出电压-直接测电阻值-电桥法计算得到的电阻值的曲线有一定的误差，但基本相等，误差在可控范围内。</p>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-138" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3665" class="wmd-preview-section preview-content">
+<h3 id="constant-current-source-adc-instrumentation-amplifier">Constant-current Source+ ADC Instrumentation Amplifier</h3>
 
-<h3 id="恒流源仪用放大器型adc测电阻">恒流源+仪用放大器型ADC测电阻</h3>
-
-<p>实验原始数据 <br>
+<p>Experimental initial data  <br>
 <img longdesc="./1446471822862.png" alt="Alt text" title="" type="image/png" src="./images/1446471822862.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>折线化表示 <br>
+<p>Line chart <br>
 <img longdesc="./1446471844876.png" alt="Alt text" title="" type="image/png" src="./images/1446471844876.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>结果分析</p>
+<p>Analysis of Result</p>
 
 <blockquote>
   <p>分析：从上面的曲线中可以看出，INA输出电压-直接测电阻值-恒流源法计算得到的电阻值的曲线有一定的误差，但基本相等，误差在可控范围内。</p>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-211" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3666" class="wmd-preview-section preview-content">
+<h3 id="electrical-bridgeδ-ς-adc-instrumentation-amplifier">Electrical Bridge+Δ-Σ-ADC Instrumentation Amplifier</h3>
 
-<h3 id="电桥-δ-σ型adc测电阻">电桥-Δ-Σ型ADC测电阻</h3>
-
-<p>实验原始数据 <br>
+<p>Experimental initial data  <br>
 <img longdesc="./1446472022089.png" alt="Alt text" title="" type="image/png" src="./images/1446472022089.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>折线化表示 <br>
+<p>Line chart <br>
 <img longdesc="./1446472041134.png" alt="Alt text" title="" type="image/png" src="./images/1446472041134.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>结果分析</p>
+<p>Analysis of Result</p>
 
 <blockquote>
   <p>分析：从上面的曲线中可以看出，Δ-Σ型ADC输出电压-直接测电阻值-电桥法计算得到的电阻值的曲线有一定的误差，（除过第一个数据误差特别大，可能是因为电阻值太小）但基本相等，误差在可控范围内。</p>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-284" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3667" class="wmd-preview-section preview-content">
+<h3 id="ina-influenced-by-ref">INA Influenced  by Ref</h3>
 
-<h3 id="ina输出受ref的影响">INA输出受Ref的影响</h3>
-
-<p>实验原始数据 <br>
+<p>Experimental initial data  <br>
 <img longdesc="./1446472110503.png" alt="Alt text" title="" type="image/png" src="./images/1446472110503.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>折线化表示 <br>
+<p>Line chart <br>
 <img longdesc="./1446472125079.png" alt="Alt text" title="" type="image/png" src="./images/1446472125079.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>结果分析</p>
+<p>Analysis of Result</p>
 
 <blockquote>
   <p>分析：从图像中可以看出，Ref与INA-out在0~2V之间是线性的关系，超过2V之后在一定的范围内保持恒定值，超过2.7V之后下降。</p>
-</blockquote>
+</blockquote></div><div id="wmd-preview-section-375" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3668" class="wmd-preview-section preview-content">
+<h3 id="special-phenomenon-analysis">Special Phenomenon Analysis</h3>
 
-<h3 id="特殊现象分析">特殊现象分析</h3>
-
-<p>实验中出现了一组数据，误差非常之大，数据如下 <br>
+<p>A set of unusual data appeared in the experiments, the random error  is very large, the data is as follows: <br>
 <img longdesc="./1446472202043.png" alt="Alt text" title="" type="image/png" src="./images/1446472202043.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Analysis:</p>
 
 <blockquote>
   <p>结论：经分析实验原理电路与相关器件的特性发现电桥–INA法测电阻可以测量电阻范围到500Ω左右，恒流源–INA法测电阻只能测量到50Ω左右，原因是INA对差模信号的放大和共模输入也有很大的关系，共模电压和输出电压的关系如下图</p>
 </blockquote>
 
-<p><img longdesc="./1446472232496.png" alt="Alt text" title="" type="image/png" src="./images/1446472232496.png" alt="Alt text" title="" type="image/png" ></p>
+<p><img longdesc="./1446472232496.png" alt="Alt text" title="" type="image/png" src="./images/1446472232496.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-16" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3816" class="wmd-preview-section preview-content">
-
-<h2 id="实验总结">实验总结</h2>
+<h2 id="summary">Summary</h2>
 
 <blockquote>
   <ul><li>做电桥法测电阻的实验电阻可以测到可调电阻的最大值500Ω左右，但是恒流源–INA法测电阻时出现了问题，明显实验结果不对，后来经过查询相关器件（INA333）的工作特性解决了问题，并得出了一般性的结论，在这方面比较有收获。</li>
   <li>通过实验中遇到的问题认识到做实验之前熟悉器件特性的重要性，这样在做实验过程中出现了问题就可以马上解决，节省完成实验的时间。</li>
   <li>组内合作在实验中也相当重要，遇到问题多个成员便多了不同的解决方案，从组间  成员间学习解决问题的态度和方法，为后来实验可积累不同经验，此项异常重要。</li>
   </ul>
-</blockquote></div><div id="wmd-preview-section-3797" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h2 id="代码实现">代码实现</h2>
+</div><div id="wmd-preview-section-17" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-3798" class="wmd-preview-section preview-content">
+<h2 id="code">Code</h2>
 
-<pre class="prettyprint hljs-dark"><code class="language-python hljs">参考网页地址<br></code></pre>
+</div><div id="wmd-preview-section-18" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs">...updating<br></code></pre>
 
 <hr>
 
-</div><div id="wmd-preview-section-3799" class="wmd-preview-section preview-content">
+<p><strong>Feedback and Suggestions</strong></p>
 
-<h2 id="反馈与建议">反馈与建议</h2>
-
-<ul><li>Sina微博：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">@hanlichao1993</a></li>
-<li>邮箱：<a href="mailto:hanlicao@bupt.edu.cn" target="_blank">hanlicao@bupt.edu.cn</a></li>
+<ul><li>Sina Microblog：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">hanlichao1993</a></li>
+<li>E-mail：<a href="mailto:hanlichao@bupt.edu.cn" target="_blank">hanlichao@bupt.edu.cn</a></li>
 </ul>
 
 <hr>
 
-<p>感谢阅读</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
-            </div>
-        </div>
-    </div>
+<p>Thanks for reading.</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../vendor/docs.min.js"></script>

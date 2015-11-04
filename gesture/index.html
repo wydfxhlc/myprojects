@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/docs.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/style.css">
-    <title>L.C. Han - 多功能手势演示系统</title>
+    <title>L.C. Han - A multimedia presentation system based on gesture recognition</title>
 </head>
 <body>
     <div class="container">
@@ -48,42 +48,41 @@
             <div class="col-xs-3">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
                   <ul class="nav bs-docs-sidenav">
-                    <li><a href="#概述">概述</a><ul class="nav">
-                    <li><a href="#灵感来源">灵感来源</a></li>
-                    <li><a href="#创作意图">创作意图</a></li>
-                    <li><a href="#主要用途">主要用途</a></li>
-                    <li><a href="#经济价值及应用前景">经济价值及应用前景</a></li>
+                    <li><a href="#summary">Summary</a><ul class="nav">
+                    <li><a href="#source-of-inspiration">Source of inspiration</a></li>
+                    <li><a href="#creation-intention">Creation Intention</a></li>
+                    <li><a href="#main-application">Main application</a></li>
+                    <li><a href="#economic-value-and-application-prospect">Economic Value and Application Prospect</a></li>
                     </ul>
                     </li>
-                    <li><a href="#系统原理">系统原理</a><ul class="nav">
-                    <li><a href="#硬件原理">硬件原理</a><ul class="nav">
-                    <li><a href="#九轴陀螺仪">九轴陀螺仪</a></li>
-                    <li><a href="#arduino-nano单片机">Arduino Nano单片机</a></li>
-                    <li><a href="#hc-05蓝牙模块">HC-05蓝牙模块</a></li>
-                    <li><a href="#手势捕捉端">手势捕捉端</a></li>
+                    <li><a href="#system-fundamentals">System Fundamentals</a><ul class="nav">
+                    <li><a href="#hardware-principle">Hardware Principle</a><ul class="nav">
+                    <li><a href="#nine-axis-gyroscope">Nine Axis Gyroscope</a></li>
+                    <li><a href="#arduino-nano-microcontroller">Arduino Nano Microcontroller</a></li>
+                    <li><a href="#hc-05-bluetooth-module">HC-05 Bluetooth Module</a></li>
+                    <li><a href="#gestures-capture">Gestures Capture</a></li>
                     </ul>
                     </li>
-                    <li><a href="#软件原理">软件原理</a><ul class="nav">
-                    <li><a href="#windows端">Windows端</a></li>
-                    <li><a href="#arduino-nano单片机端">Arduino Nano单片机端</a></li>
+                    <li><a href="#software-principle">Software Principle</a><ul class="nav">
+                    <li><a href="#windows">Windows</a></li>
+                    <li><a href="#arduino-nano-microcontroller-1">Arduino Nano  Microcontroller</a></li>
                     </ul>
                     </li>
                     </ul>
                     </li>
-                    <li><a href="#系统实现">系统实现</a><ul class="nav">
-                    <li><a href="#整体实现思路">整体实现思路</a></li>
-                    <li><a href="#细节实现流程图">细节实现流程图</a></li>
+                    <li><a href="#system-implementation">System Implementation</a><ul class="nav">
+                    <li><a href="#overall-implementation-approach">Overall Implementation Approach</a></li>
+                    <li><a href="#detailed-flow-chart">Detailed Flow Chart</a></li>
                     </ul>
                     </li>
-                    <li><a href="#产品特色">产品特色</a></li>
-                    <li><a href="#产品升级">产品升级</a></li>
-                    <li><a href="#功能展示">功能展示</a><ul class="nav">
-                    <li><a href="#实物图片演示">实物图片演示</a></li>
-                    <li><a href="#部分功能展现-手势控制ppt">部分功能展现-手势控制PPT</a></li>
+                    <li><a href="#product-feature">Product Feature</a></li>
+                    <li><a href="#product-up-gradation">Product Up-gradation</a></li>
+                    <li><a href="#functional-display">Functional Display</a><ul class="nav">
+                    <li><a href="#real-product-exhibition">Real Product Exhibition</a></li>
+                    <li><a href="#partial-functional-display-controlling-ppt">Partial Functional Display-Controlling PPT</a></li>
                     </ul>
                     </li>
-                    <li><a href="#代码实现">代码实现</a></li>
-                    <li><a href="#反馈与建议">反馈与建议</a></li>
+                    <li><a href="#code">Code</a></li>
                     </ul>
                     </li>
                   </ul>
@@ -94,212 +93,258 @@
 
             <div id='preview-contents' class='note-content'>
                         <div id="wmd-preview" class="preview-content"></div>
-                    <div id="wmd-preview-section-310" class="wmd-preview-section preview-content">
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-559" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-2" class="wmd-preview-section preview-content">
 
-<h1 id="多功能手势演示系统">多功能手势演示系统</h1>
-
-<p>A multimedia presentation system based on gesture recognition</p>
+<h1 id="a-multimedia-presentation-system-based-on-gesture-recognition">A multimedia presentation system based on gesture recognition</h1>
 
 <p></p>
 
 <hr>
 
 <div><div class="toc"><div class="toc">
-<ul>
+<ul class="nav">
 
 </ul>
 </div>
 </div>
-</div></div><div id="wmd-preview-section-436" class="wmd-preview-section preview-content">
+</div>
 
-<h2 id="概述">概述</h2>
+</div><div id="wmd-preview-section-3" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-871" class="wmd-preview-section preview-content">
+<h2 id="summary">Summary</h2>
 
-<h3 id="灵感来源">灵感来源</h3>
+<p>概述</p>
+
+</div><div id="wmd-preview-section-4" class="wmd-preview-section preview-content">
+
+<h3 id="source-of-inspiration">Source of inspiration</h3>
+
+<p>灵感来源</p>
 
 <blockquote>
   <p>本创新设计的灵感来源老师在课堂教学时，常常使用PPT翻页器，但是我们发现，老师上课操作非常不方便，例如在按键时常会发生按错位置或找不到按键而需要认真确认，然后灵敏度也不是很准确，必须在一定的范围内操作，不能长距离离开翻页器接收装置，要是应用PPT指针选项的画笔就必须使用鼠标，操作非常不方便。</p>
-</blockquote></div><div id="wmd-preview-section-11087" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h3 id="创作意图">创作意图</h3>
+</div><div id="wmd-preview-section-5" class="wmd-preview-section preview-content">
 
-<p>现在市场上大量出现的产品如下图所示。可以通过按键来实现基本功能。 <br>
+<h3 id="creation-intention">Creation Intention</h3>
+
+<p>创作意图 <br>
+现在市场上大量出现的产品如下图所示。可以通过按键来实现基本功能。 <br>
 <img longdesc="./1446402616447.png" alt="Alt text" title="" type="image/png" src="./images/1446402616447.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>市场上激光笔</p>
+<p>Laser pointer on the market now</p>
 
 <blockquote>
   <p>第一次使用还得认真确认按键的位置，按起来也觉得不舒服。还有重要一点，因为需要按很多键实现功能，所以产品不可能做的很小。</p>
-</blockquote></div><div id="wmd-preview-section-1719" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h3 id="主要用途">主要用途</h3>
+</div><div id="wmd-preview-section-6" class="wmd-preview-section preview-content">
+
+<h3 id="main-application">Main application</h3>
+
+<p>主要用途</p>
 
 <blockquote>
   <p>主要可以用于教学系统，同时可以适用于演讲者，需要手势控制PPT演示或者手势控制桌面操作系统的场合。再向更大方面拓展，可以用于各种多媒体演示系统。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-1819" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-7" class="wmd-preview-section preview-content">
 
-<h3 id="经济价值及应用前景">经济价值及应用前景</h3>
+<h3 id="economic-value-and-application-prospect">Economic Value and Application Prospect</h3>
+
+<p>经济价值及应用前景</p>
 
 <blockquote>
   <p>经济价值上，本团队做成的实验模型除去人力成本价格基本控制在60~70元，若是大规模批量生产，价格可以降低至40元以下，价格对于消费人群来说会非常合理，并且愿意被消费者接受。</p>
-</blockquote></div><div id="wmd-preview-section-1853" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h2 id="系统原理">系统原理</h2></div><div id="wmd-preview-section-2764" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-8" class="wmd-preview-section preview-content">
 
-<h3 id="硬件原理">硬件原理</h3>
+<h2 id="system-fundamentals">System Fundamentals</h2>
+
+<p>系统原理</p>
+
+</div><div id="wmd-preview-section-9" class="wmd-preview-section preview-content">
+
+<h3 id="hardware-principle">Hardware Principle</h3>
+
+<p>硬件原理</p>
 
 <blockquote>
   <p>单片机硬件部分，改进了原有单片机使其准确性和灵敏度得到提高。另外在其中增加了自动休眠和唤醒功能，同时可以自动进入休眠状态，功耗降低，提高其待机时长。</p>
-</blockquote></div><div id="wmd-preview-section-3178" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="九轴陀螺仪">九轴陀螺仪</h4>
+</div><div id="wmd-preview-section-10" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446400731065.png" alt="Alt text" title="" type="image/png" src="./images/1446400731065.png" alt="Alt text" title="" type="image/png" ></p>
+<h4 id="nine-axis-gyroscope">Nine Axis Gyroscope</h4>
+
+<p>九轴陀螺仪 <br>
+<img longdesc="./1446400731065.png" alt="Alt text" title="" type="image/png" src="./images/1446400731065.png" alt="Alt text" title="" type="image/png" ></p>
 
 <blockquote>
   <ul><li>连单片机</li>
   <li>用上位机监视模块与单片机的通信</li>
   </ul>
-</blockquote></div><div id="wmd-preview-section-3214" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h4 id="arduino-nano单片机">Arduino Nano单片机</h4>
+</div><div id="wmd-preview-section-11" class="wmd-preview-section preview-content">
+
+<h4 id="arduino-nano-microcontroller">Arduino Nano Microcontroller</h4>
 
 <p><img longdesc="./1446400706172.png" alt="Alt text" title="" type="image/png" src="./images/1446400706172.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-3359" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-12" class="wmd-preview-section preview-content">
 
-<h4 id="hc-05蓝牙模块">HC-05蓝牙模块</h4>
+<h4 id="hc-05-bluetooth-module">HC-05 Bluetooth Module</h4>
 
-<p><img longdesc="./1446400772451.png" alt="Alt text" title="" type="image/png" src="./images/1446400772451.png" alt="Alt text" title="" type="image/png" ></p>
+<p><img longdesc="./1446400772451.png" alt="Alt text" title="" type="image/png" src="./images/1446400772451.png" alt="Alt text" title="" type="image/png" > <br>
+)</p>
 
-</div><div id="wmd-preview-section-3545" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-13" class="wmd-preview-section preview-content">
 
-<h4 id="手势捕捉端">手势捕捉端</h4>
+<h4 id="gestures-capture">Gestures Capture</h4>
 
 <p><img longdesc="./1446400814008.png" alt="Alt text" title="" type="image/png" src="./images/1446400814008.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-3736" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-14" class="wmd-preview-section preview-content">
 
-<h3 id="软件原理">软件原理</h3>
+<h3 id="software-principle">Software Principle</h3>
 
-</div><div id="wmd-preview-section-6222" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-15" class="wmd-preview-section preview-content">
 
-<h4 id="windows端">Windows端</h4>
+<h4 id="windows">Windows</h4>
 
 <blockquote>
   <p>Win32系统把文件的概念进行了扩展。无论是文件、通信设备、命名管道、邮件槽、磁盘、还是控制台，都是用API函数CreateFile来打开或创建的。因此，只需通过CreateFile函数打开指定的串口即可获取串口的I/O流。</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-6746" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-16" class="wmd-preview-section preview-content">
 
-<pre class="prettyprint hljs-dark"><code class="language-python hljs"> BOOL CSampleDlg:: PortOpen() <br>{    <br>  BOOL m_Opened;<br> m_Serial.SetCommPort(<span class="hljs-number">2</span>);  <br> m_Serial.SetSettings(<span class="hljs-string">"4800,N,8,1"</span>);      <br> m_Serial.SetInBufferSize(<span class="hljs-number">1024</span>);<br> m_Serial.SetInBufferCount(<span class="hljs-number">0</span>);<br> m_Serial.InputMode(<span class="hljs-number">1</span>); <br> m_Serial.SetInputLen(<span class="hljs-number">0</span>);                         <br> m_Opened=m_Serail.SetPortOpen(<span class="hljs-number">1</span>);<br> <span class="hljs-keyword">return</span>     m_Opened;            <br>}       <br></code></pre></div><div id="wmd-preview-section-6307" class="wmd-preview-section preview-content">
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"> BOOL CSampleDlg:: PortOpen() <br>{    <br>  BOOL m_Opened;<br> m_Serial.SetCommPort(<span class="hljs-number">2</span>);  <br> m_Serial.SetSettings(<span class="hljs-string">"4800,N,8,1"</span>);      <br> m_Serial.SetInBufferSize(<span class="hljs-number">1024</span>);<br> m_Serial.SetInBufferCount(<span class="hljs-number">0</span>);<br> m_Serial.InputMode(<span class="hljs-number">1</span>); <br> m_Serial.SetInputLen(<span class="hljs-number">0</span>);                         <br> m_Opened=m_Serail.SetPortOpen(<span class="hljs-number">1</span>);<br> <span class="hljs-keyword">return</span>     m_Opened;            <br>}       <br></code></pre>
 
-<h4 id="arduino-nano单片机端">Arduino Nano单片机端</h4>
+</div><div id="wmd-preview-section-17" class="wmd-preview-section preview-content">
+
+<h4 id="arduino-nano-microcontroller-1">Arduino Nano  Microcontroller</h4>
 
 <blockquote>
   <p>多功能演示器在一定时间内没有对其进行操控时，则自动进入休眠状态，功耗降低，提高其待机时长。当在自动休眠状态下接收到活动指令时，则会自动退出休眠状态，开始进入工作状态.</p>
 </blockquote>
 
-</div><div id="wmd-preview-section-6437" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-18" class="wmd-preview-section preview-content">
 
 <pre class="prettyprint hljs-dark"><code class="language-python hljs">void loop() <br>{    <span class="hljs-keyword">if</span>(SleepOrNot==<span class="hljs-number">0</span>)<br>    { decodedata();<br>      SleepTiming2 = millis(); }<br>    <span class="hljs-keyword">if</span>(w[<span class="hljs-number">1</span>]&gt;<span class="hljs-number">1000</span>&amp;&amp;SleepOrNot==<span class="hljs-number">0</span>&amp;&amp;RightClick==<span class="hljs-number">1</span>)<br>    {  RightClick=<span class="hljs-number">0</span>;<br>      Bluetooth.print(<span class="hljs-string">"rightoff\n"</span>);<br>      w[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>      delay(<span class="hljs-number">500</span>);    }<br>      <span class="hljs-keyword">if</span>(SleepOrNot==<span class="hljs-number">0</span> &amp;&amp; SleepTiming2-SleepTiming1 &gt; <span class="hljs-number">60000</span> <br>         &amp;&amp; RightClick == <span class="hljs-number">0</span>)//无按键按下时长判断<br>      {   leepOrNot = <span class="hljs-number">1</span>;<br>           digitalWrite(<span class="hljs-number">2</span>, LOW);   //MPU6050 Off<br>          digitalWrite(<span class="hljs-number">13</span>,LOW);<br>           PowerOn = <span class="hljs-number">0</span>;        <br>          energy.PowerDown();  //go into Powerdown mode      }<br>  <span class="hljs-keyword">if</span>(a[<span class="hljs-number">2</span>]&gt;<span class="hljs-number">0.40</span>&amp;&amp;StartOrNot==<span class="hljs-number">0</span>&amp;&amp;digitalRead(<span class="hljs-number">3</span>)==LOW<br>      &amp;&amp;SleepOrNot==<span class="hljs-number">0</span>&amp;&amp;RightClick==<span class="hljs-number">0</span>)//开始<br>  {   delay(<span class="hljs-number">20</span>);<br>      <span class="hljs-keyword">if</span>(digitalRead(<span class="hljs-number">3</span>)==LOW)<br>      {  Bluetooth.write(<span class="hljs-string">"start\n"</span>);<br>        a[<span class="hljs-number">2</span>]=-<span class="hljs-number">1</span>;<br>        StartOrNot=<span class="hljs-number">1</span>;<br>        delay(<span class="hljs-number">500</span>); } }<br></code></pre>
 
-</div><div id="wmd-preview-section-6875" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-19" class="wmd-preview-section preview-content">
 
-<h2 id="系统实现">系统实现</h2>
+<h2 id="system-implementation">System Implementation</h2>
 
-</div><div id="wmd-preview-section-8037" class="wmd-preview-section preview-content">
+<p>系统实现</p>
 
-<h3 id="整体实现思路">整体实现思路</h3>
+</div><div id="wmd-preview-section-20" class="wmd-preview-section preview-content">
+
+<h3 id="overall-implementation-approach">Overall Implementation Approach</h3>
+
+<p>整体实现思路</p>
 
 <blockquote>
-  <p>该Projects主要是要研究如何通过远程手势捕捉装置上搭载的陀螺仪、加速度感应器等传感器来捕捉、识别操作者的手势动作，将捕捉到的数据通过蓝牙无线传输给PC，在PC端蓝牙接收，驱动程序通过串口读取蓝牙接收到的数据</p>
+  <p>该项目主要是要研究如何通过远程手势捕捉装置上搭载的陀螺仪、加速度感应器等传感器来捕捉、识别操作者的手势动作，将捕捉到的数据通过蓝牙无线传输给PC，在PC端蓝牙接收，驱动程序通过串口读取蓝牙接收到的数据</p>
 </blockquote>
 
 <p><img longdesc="./1446402047308.png" alt="Alt text" title="" type="image/png" src="./images/1446402047308.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-8610" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-21" class="wmd-preview-section preview-content">
 
-<h3 id="细节实现流程图">细节实现流程图</h3>
+<h3 id="detailed-flow-chart">Detailed Flow Chart</h3>
 
-<p><img longdesc="./1446402092997.png" alt="Alt text" title="" type="image/png" src="./images/1446402092997.png" alt="Alt text" title="" type="image/png" > <br>
-单片机控制端实现流程图  <br>
-<img longdesc="./1446402123791.png" alt="Alt text" title="" type="image/png" src="./images/1446402123791.png" alt="Alt text" title="" type="image/png" > <br>
-单片机中断程序流程图 <br>
-<img longdesc="./1446402182409.png" alt="Alt text" title="" type="image/png" src="./images/1446402182409.png" alt="Alt text" title="" type="image/png" > <br>
-PC控制端流程图</p>
+<p><img longdesc="./1446402092997.png" alt="Alt text" title="" type="image/png" src="./images/1446402092997.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-10896" class="wmd-preview-section preview-content">
+<p>Single-chip microcomputer controlling <br>
+<img longdesc="./1446402123791.png" alt="Alt text" title="" type="image/png" src="./images/1446402123791.png" alt="Alt text" title="" type="image/png" ></p>
 
-<h2 id="产品特色">产品特色</h2>
+<p>Single-chip microcomputer interrupt routine <br>
+<img longdesc="./1446402182409.png" alt="Alt text" title="" type="image/png" src="./images/1446402182409.png" alt="Alt text" title="" type="image/png" ></p>
 
-<p>多功能手势演示装置只有一个按键——电源键。可以实现以下强大功能： <br>
-<img longdesc="./1446402253308.png" alt="Alt text" title="" type="image/png" src="./images/1446402253308.png" alt="Alt text" title="" type="image/png" > <br>
-多功能手势演示</p>
+<p>PC Controlling</p>
+
+</div><div id="wmd-preview-section-22" class="wmd-preview-section preview-content">
+
+<h2 id="product-feature">Product Feature</h2>
+
+<p>产品特色 <br>
+多功能手势演示装置只有一个按键——电源键。可以实现以下强大功能： <br>
+<img longdesc="./1446402253308.png" alt="Alt text" title="" type="image/png" src="./images/1446402253308.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Multi-functional Multimedia Gesture Controlling</p>
 
 <blockquote>
   <p>而且产品可升级，重要的是操作成功率接近100%。</p>
-</blockquote></div><div id="wmd-preview-section-11155" class="wmd-preview-section preview-content">
+</blockquote>
 
-<h2 id="产品升级">产品升级</h2>
+</div><div id="wmd-preview-section-23" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446402326453.png" alt="Alt text" title="" type="image/png" src="./images/1446402326453.png" alt="Alt text" title="" type="image/png" > <br>
- 现阶段产品</p>
+<h2 id="product-up-gradation">Product Up-gradation</h2>
 
-<p><img longdesc="./1446402486996.png" alt="Alt text" title="" type="image/png" src="./images/1446402486996.png" alt="Alt text" title="" type="image/png" > <br>
- 升级版多功能“迷你”手势控制演示器</p>
+<p><img longdesc="./1446402326453.png" alt="Alt text" title="" type="image/png" src="./images/1446402326453.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-11706" class="wmd-preview-section preview-content">
+<p>Current Product</p>
 
-<h2 id="功能展示">功能展示</h2>
+<p><img longdesc="./1446402486996.png" alt="Alt text" title="" type="image/png" src="./images/1446402486996.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-11759" class="wmd-preview-section preview-content">
+<p>Mini Product with Up-gradation</p>
 
-<h3 id="实物图片演示">实物图片演示</h3>
+</div><div id="wmd-preview-section-24" class="wmd-preview-section preview-content">
 
-<p><img longdesc="./1446402713871.png" alt="Alt text" title="" type="image/png" src="./images/1446402713871.png" alt="Alt text" title="" type="image/png" > <br>
-参与第七届大学生创新展</p>
+<h2 id="functional-display">Functional Display</h2>
 
-</div><div id="wmd-preview-section-12732" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-25" class="wmd-preview-section preview-content">
 
-<h3 id="部分功能展现-手势控制ppt">部分功能展现-手势控制PPT</h3>
+<h3 id="real-product-exhibition">Real Product Exhibition</h3>
 
-<p>手势控制PPT全屏 <br>
-<img longdesc="./1446402794905.png" alt="Alt text" title="" type="image/png" src="./images/1446402794905.png" alt="Alt text" title="" type="image/png" > <br>
-手势控制PPT左翻页 <br>
-<img longdesc="./1446402809772.png" alt="Alt text" title="" type="image/png" src="./images/1446402809772.png" alt="Alt text" title="" type="image/png" > <br>
-手势控制PPT右翻页 <br>
-<img longdesc="./1446402854431.png" alt="Alt text" title="" type="image/png" src="./images/1446402854431.png" alt="Alt text" title="" type="image/png" > <br>
-手势控制激光笔 <br>
-<img longdesc="./1446402898861.png" alt="Alt text" title="" type="image/png" src="./images/1446402898861.png" alt="Alt text" title="" type="image/png" > <br>
-空中鼠标 <br>
-<img longdesc="./1446402923850.png" alt="Alt text" title="" type="image/png" src="./images/1446402923850.png" alt="Alt text" title="" type="image/png" > <br>
-<img longdesc="./1446402941972.png" alt="Alt text" title="" type="image/png" src="./images/1446402941972.png" alt="Alt text" title="" type="image/png" ></p>
+<p><img longdesc="./1446402713871.png" alt="Alt text" title="" type="image/png" src="./images/1446402713871.png" alt="Alt text" title="" type="image/png" ></p>
 
-</div><div id="wmd-preview-section-12929" class="wmd-preview-section preview-content">
+<p>Exhibited at the Seventh Innovation Exhibition</p>
 
-<h2 id="代码实现">代码实现</h2>
+</div><div id="wmd-preview-section-138" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-13162" class="wmd-preview-section preview-content">
+<h3 id="partial-functional-display-controlling-ppt">Partial Functional Display-Controlling PPT</h3>
 
-<pre class="prettyprint hljs-dark"><code class="language-python hljs">参考网页地址<br></code></pre>
+<p>Full screen-controlling with gesture  <br>
+<img longdesc="./1446402794905.png" alt="Alt text" title="" type="image/png" src="./images/1446402794905.png" alt="Alt text" title="" type="image/png" ></p>
 
-<hr></div><div id="wmd-preview-section-63" class="wmd-preview-section preview-content">
+<p>Last page-controlling with gesture  <br>
+<img longdesc="./1446402809772.png" alt="Alt text" title="" type="image/png" src="./images/1446402809772.png" alt="Alt text" title="" type="image/png" ></p>
 
-<h2 id="反馈与建议">反馈与建议</h2>
+<p>Next page-controlling with gesture  <br>
+<img longdesc="./1446402854431.png" alt="Alt text" title="" type="image/png" src="./images/1446402854431.png" alt="Alt text" title="" type="image/png" ></p>
 
-<ul><li>Sina微博：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">@hanlichao1993</a></li>
-<li>邮箱：<a href="mailto:hanlicao@bupt.edu.cn" target="_blank">hanlicao@bupt.edu.cn</a></li>
+<p>Lser pen using with gesture  <br>
+<img longdesc="./1446402898861.png" alt="Alt text" title="" type="image/png" src="./images/1446402898861.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p>Air Mouse-controlling with gesture  <br>
+<img longdesc="./1446402923850.png" alt="Alt text" title="" type="image/png" src="./images/1446402923850.png" alt="Alt text" title="" type="image/png" ></p>
+
+<p><img longdesc="./1446402941972.png" alt="Alt text" title="" type="image/png" src="./images/1446402941972.png" alt="Alt text" title="" type="image/png" ></p></div><div id="wmd-preview-section-27" class="wmd-preview-section preview-content">
+
+<h2 id="code">Code</h2>
+
+</div><div id="wmd-preview-section-28" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs">...updating<br></code></pre>
+
+<hr>
+
+<p><strong>Feedback and Suggestions</strong></p>
+
+<ul><li>Sina Microblog：<a href="http://weibo.com/3038600720/profile?topnav=1&amp;wvr=6" target="_blank">hanlichao1993</a></li>
+<li>E-mail：<a href="mailto:hanlichao@bupt.edu.cn" target="_blank">hanlichao@bupt.edu.cn</a></li>
 </ul>
 
 <hr>
 
-<p>感谢阅读</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+<p>Thanks for reading.</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
 
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
