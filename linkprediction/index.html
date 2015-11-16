@@ -85,7 +85,7 @@
 
 <h1 id="reliable-evaluation-metric-in-precision-comparison-of-link-prediction-algorithms">Reliable Evaluation Metric in Precision Comparison of Link Prediction Algorithms</h1>
 
-<p>可靠的链路预测算法的精度比较评价指标</p>
+<p>可靠的链路预测算法的正确率比较评价指标</p>
 
 <hr>
 
@@ -135,7 +135,7 @@
 
 <h3 id="traditional-auc-value">Traditional AUC Value</h3>
 
-<p>传统 AUC值评价预测精度</p>
+<p>传统 AUC统计值预测正确率</p>
 
 <blockquote>
   <p>实验一共进行N次比较，在比较中，如果有m次测试边分数值大于不存在边的分数值，n次两个分数值相等，则AUC定义为 。</p>
@@ -221,21 +221,21 @@
 
 <h2 id="new-accuracy-comparison-indicator">New Accuracy Comparison Indicator</h2>
 
-<p>新精度比较评价指标</p>
+<p>新正确率比较评价指标</p>
 
 <blockquote>
-  <p><strong>Precision Score (PS)</strong> <br>
-  对传统的AUC评价算法进行改进，在本测试数据集下，测试精度更高。</p>
+  <p><strong>Accuracy Score (AS)</strong> <br>
+  在本测试数据集下，测试正确率，比传统的AUC统计值简单，可行。</p>
 </blockquote>
 
 </div><div id="wmd-preview-section-12" class="wmd-preview-section preview-content">
 
 <h3 id="analysis-on-each-algorithm">Analysis on Each Algorithm</h3>
 
-<p>新改良Precision Score 评价指标分析各算法的精度</p>
+<p>Accuracy Score 评价指标分析各算法的正确率</p>
 
 <blockquote>
-  <p>基于此划分评估所有算法的精度重复前面两个过程N次，并取平均值和方差</p>
+  <p>基于此划分评估所有算法的正确率重复前面两个过程N次，并取平均值和方差</p>
 </blockquote>
 
 </div><div id="wmd-preview-section-13" class="wmd-preview-section preview-content">
@@ -258,7 +258,7 @@
 <p>各边预测值</p>
 
 <blockquote>
-  <p>将链接之间的存在的边的预测值写入EXCEL表格，其中因为为了得到更为精确的PS，执行了两次循环，所以有两次的预测值，并且预测值是按照从大到小的顺序排列 <br>
+  <p>将链接之间的存在的边的预测值写入EXCEL表格，其中因为为了得到更为精确的正确率AS，执行了两次循环，所以有两次的预测值，并且预测值是按照从大到小的顺序排列 <br>
   <img longdesc="./1446454737485.png" alt="Alt text" title="" type="image/png" src="./images/1446454737485.png" alt="Alt text" title="" type="image/png" ></p>
   
   <p>举例：Salton算法存在的边的预测值 <br>
